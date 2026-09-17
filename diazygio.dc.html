@@ -44,11 +44,15 @@
   p { margin: 0; text-wrap: pretty; }
   h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
   ::selection { background: #ffb10a; color: #271651; }
+  [style*="#ffb10a"]::selection { background: #835be3; color: #ffffff; }
+  [style*="#ffb10a"] ::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"]::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"] ::selection { background: #835be3; color: #ffffff; }
   :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
   [data-c] { padding-left: 80px; padding-right: 80px; }
   [data-sec] { padding-top: 80px; padding-bottom: 80px; }
-  [data-detail] { grid-template-columns: 1fr 1fr; }
-  @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-detail] { grid-template-columns: 1fr; } }
+  [data-detail] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-detail] { grid-template-columns: minmax(0, 1fr); } }
   @media (max-width: 767px) { [data-c] { padding-left: 20px; padding-right: 20px; } }
   @media (max-width: 767px) { [data-img] { order: -1; } }
   @media (max-width: 767px) { [data-h3] { line-height: 31.25px; margin-top: 0 !important; } }

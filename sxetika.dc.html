@@ -43,12 +43,19 @@
   p { margin: 0; text-wrap: pretty; }
   h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
   ::selection { background: #ffb10a; color: #271651; }
+  [style*="#ffb10a"]::selection { background: #835be3; color: #ffffff; }
+  [style*="#ffb10a"] ::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"]::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"] ::selection { background: #835be3; color: #ffffff; }
   :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
   [data-c] { padding-left: 80px; padding-right: 80px; }
   [data-sec] { padding-top: 80px; padding-bottom: 80px; }
-  [data-detail] { grid-template-columns: 1fr 1fr; }
-  @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-detail] { grid-template-columns: 1fr; } }
+  [data-detail] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-detail] { grid-template-columns: minmax(0, 1fr); } }
   @media (max-width: 767px) { [data-c] { padding-left: 20px; padding-right: 20px; } [data-sec] { padding-top: 60px; padding-bottom: 60px; } }
+  @media (max-width: 767px) { [data-ht2] { font-size: 30px !important; line-height: 38px !important; margin: 0 12px !important; } [data-ht2] > span { white-space: nowrap; } }
+  @media (max-width: 479px) { [data-ht2] { font-size: 28px !important; line-height: 35px !important; } }
+  @media (max-width: 479px) { [data-name2] { display: flex; flex-direction: column; } }
   @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } [data-ht] { text-align: center; text-wrap: balance; } }
   @media (max-width: 767px) { [data-detail] > span { order: -1; } [data-extra] { margin-top: 20px !important; } [data-detail] h2 { font-size: 28px !important; line-height: 35px !important; } [data-lead] { font-weight: 400 !important; } [data-detail] h3, [data-extra] h3 { line-height: 31.25px !important; margin-top: 0 !important; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
@@ -66,7 +73,7 @@
         <div data-head="" style="display: flex; align-items: center; justify-content: center; margin-bottom: 80px;">
           <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
           <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ffb10a;"></span>
-          <h1 style="font-size: clamp(33px, 4vw, 45px); font-weight: 700; line-height: 1.25; margin: 0 20px; color: #271651; position: relative; top: -5px;" data-ht="">Σχετικά με εμένα</h1>
+          <h1 style="font-size: clamp(33px, 4vw, 45px); font-weight: 700; line-height: 1.25; margin: 0 20px; color: #271651; position: relative; top: -5px;" data-ht="" data-ht2=""><span>Σχετικά</span> <span>με εμένα</span></h1>
           <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ffb10a;"></span>
           <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
         </div>
@@ -76,7 +83,7 @@
           <div style="display: flex; flex-direction: column; gap: 20px;">
             <span style="display: flex; flex-direction: column; gap: 10px;">
               <span style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: #9a6700;">ΤΙΤΛΟΣ ΕΙΔΙΚΟΤΗΤΑΣ</span>
-              <h2 style="font-size: 25px; font-weight: 700; line-height: 1.3;">Ονοματεπώνυμο</h2>
+              <h2 data-name2="" style="font-size: 25px; font-weight: 700; line-height: 1.3;"><span>Όνομα</span> <span>Επίθετο</span></h2>
             </span>
             <p data-lead="" style="font-size: 16px; font-weight: 700; line-height: 28px; max-width: 620px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <h3 style="font-size: 25px; font-weight: 700; line-height: 1.3; margin-top: 20px;">Λίγα λόγια για μένα</h3>

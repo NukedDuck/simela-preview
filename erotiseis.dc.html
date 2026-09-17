@@ -3,6 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Συχνές Ερωτήσεις — Ψυχολόγος Ψυχολόγος</title>
+<meta name="description" content="Συχνές Ερωτήσεις — Ψυχολόγος Ψυχολόγος">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="el_GR">
+<meta property="og:site_name" content="Ψυχολόγος Ψυχολόγος">
+<meta property="og:title" content="Συχνές Ερωτήσεις — Ψυχολόγος Ψυχολόγος">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/logo-mark-2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -34,6 +45,10 @@
   h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
   button { font-family: inherit; }
   ::selection { background: #ffb10a; color: #271651; }
+  [style*="#ffb10a"]::selection { background: #835be3; color: #ffffff; }
+  [style*="#ffb10a"] ::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"]::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"] ::selection { background: #835be3; color: #ffffff; }
   :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
   :root { --step: 80px; --gap: 40px; --gutter: 80px; }
   [data-c] { padding-left: var(--gutter); padding-right: var(--gutter); }
@@ -48,6 +63,12 @@
   [data-shift="2"] [data-item]:nth-child(3n+1) { --acc: #ffb10a; --ink: #271651; }
   [data-shift="2"] [data-item]:nth-child(3n+2) { --acc: #835be3; --ink: #ffffff; }
   [data-shift="2"] [data-item]:nth-child(3n+3) { --acc: #ef5074; --ink: #ffffff; }
+  [data-shift="0"] [data-item]:nth-child(3n+3) [data-q][aria-expanded="true"]::selection,
+  [data-shift="0"] [data-item]:nth-child(3n+3) [data-q][aria-expanded="true"] ::selection,
+  [data-shift="1"] [data-item]:nth-child(3n+2) [data-q][aria-expanded="true"]::selection,
+  [data-shift="1"] [data-item]:nth-child(3n+2) [data-q][aria-expanded="true"] ::selection,
+  [data-shift="2"] [data-item]:nth-child(3n+1) [data-q][aria-expanded="true"]::selection,
+  [data-shift="2"] [data-item]:nth-child(3n+1) [data-q][aria-expanded="true"] ::selection { background: #835be3; color: #ffffff; }
   [data-q] { transition: background-color 240ms ease, border-color 240ms ease; }
   [data-q] [data-qt] { color: #271651; transition: color 240ms ease; }
   [data-q] [data-qm] { background: var(--acc); color: var(--ink); transition: rotate 320ms cubic-bezier(.2,.7,.2,1), background-color 240ms ease, color 240ms ease; }

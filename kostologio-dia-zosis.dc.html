@@ -44,6 +44,10 @@
   p { margin: 0; text-wrap: pretty; }
   h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
   ::selection { background: #ffb10a; color: #271651; }
+  [style*="#ffb10a"]::selection { background: #835be3; color: #ffffff; }
+  [style*="#ffb10a"] ::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"]::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"] ::selection { background: #835be3; color: #ffffff; }
   :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
   :root { --step: 80px; --gap: 40px; --gutter: 80px; }
   [data-c] { padding-left: var(--gutter); padding-right: var(--gutter); }
@@ -52,6 +56,8 @@
   @media (max-width: 1099px) { [data-gkost] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 991px) { :root { --gutter: 40px; } }
   @media (max-width: 767px) { :root { --gutter: 20px; --gap: 20px; } [data-kcard] { padding: 20px !important; } [data-gkost] { grid-template-columns: minmax(0, 1fr); gap: 20px; } }
+  @media (max-width: 767px) { [data-ht2] { font-size: 34px !important; line-height: 42px !important; margin: 0 12px !important; } [data-ht2] > span { white-space: nowrap; } }
+  @media (max-width: 479px) { [data-ht2] { font-size: 31px !important; line-height: 38px !important; } }
   @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 </style>
@@ -68,7 +74,7 @@
         <div data-head="" style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--step);">
           <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
           <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ef5074;"></span>
-          <h1 style="font-size: clamp(38px, 4vw, 45px); font-weight: 700; line-height: 1.25; margin: 0 20px; color: #271651; text-align: center; position: relative; top: -5px;" data-ht="">Διά Ζώσης Συνεδρία</h1>
+          <h1 style="font-size: clamp(38px, 4vw, 45px); font-weight: 700; line-height: 1.25; margin: 0 20px; color: #271651; text-align: center; position: relative; top: -5px;" data-ht="" data-ht2=""><span>Διά Ζώσης</span> <span>Συνεδρία</span></h1>
           <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ef5074;"></span>
           <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
         </div>

@@ -28,15 +28,30 @@
   p, h1 { margin: 0; text-wrap: pretty; }
   a { text-decoration: none; }
   ::selection { background: #ffb10a; color: #271651; }
+  [style*="#ffb10a"]::selection { background: #835be3; color: #ffffff; }
+  [style*="#ffb10a"] ::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"]::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"] ::selection { background: #835be3; color: #ffffff; }
   :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
   .btn { transition: background-color 200ms ease; }
   .btn:hover, .btn:active { background: #a385ea; }
   .qlink { transition: border-color 200ms ease; }
   .qlink:hover { border-color: #835be3; }
   @media (max-width: 767px) {
-    .wrap { padding: 40px 20px 60px; }
-    .sheet { padding: 40px 24px 50px; border-radius: 10px; }
-    .digits { gap: 4px; }
+    .wrap { padding: 40px 20px 60px !important; }
+    .sheet { padding: 40px 24px 50px !important; border-radius: 10px !important; }
+    .digits { gap: 4px !important; }
+    .btn { height: 52px !important; padding: 0 20px !important; gap: 10px !important; font-size: 15px !important; }
+    .lbl { white-space: nowrap; }
+    .links { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-items: center; gap: 16px !important; }
+  }
+  @media (max-width: 479px) {
+    .links { gap: 14px 10px !important; }
+    .qlink { font-size: 14px !important; }
+    .btn { height: 50px !important; padding: 0 18px !important; font-size: 14px !important; }
+  }
+  @media (max-width: 359px) {
+    .links { grid-template-columns: minmax(0, 1fr) !important; gap: 14px !important; }
   }
 </style>
 </head>
@@ -55,11 +70,11 @@
     <p style="max-width: 620px; font-size: 16px; line-height: 28px; color: #333333; margin-top: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
     <a href="arxiki.dc.html" class="btn" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 40px; padding: 0 34px; height: 56px; border-radius: 30px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; line-height: 26px;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><path d="M3.8 11.2 12 4.2l8.2 7"></path><path d="M6 10.4V19.6h12v-9.2"></path></svg>
-      <span>Επιστροφή στην Αρχική</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><path d="M3.8 11.2 12 4.2l8.2 7"></path><path d="M6 10.4V19.6h12v-9.2"></path></svg>
+      <span class="lbl">Επιστροφή στην Αρχική</span>
     </a>
 
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 30px; margin-top: 50px; padding-top: 40px; border-top: 1px solid #2716511a; width: 100%;">
+    <div class="links" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 30px; margin-top: 50px; padding-top: 40px; border-top: 1px solid #2716511a; width: 100%;">
       <a href="ypiresies.dc.html" class="qlink" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Υπηρεσίες</a>
       <a href="sxetika.dc.html" class="qlink" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Σχετικά με εμένα</a>
       <a href="erotiseis.dc.html" class="qlink" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Συχνές Ερωτήσεις</a>

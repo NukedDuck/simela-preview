@@ -37,6 +37,10 @@
   p { margin: 0; text-wrap: pretty; }
   h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
   ::selection { background: #ffb10a; color: #271651; }
+  [style*="#ffb10a"]::selection { background: #835be3; color: #ffffff; }
+  [style*="#ffb10a"] ::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"]::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"] ::selection { background: #835be3; color: #ffffff; }
   :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
   :root { --step: 80px; --gutter: 80px; }
   [data-c] { padding-left: var(--gutter); padding-right: var(--gutter); }
@@ -47,6 +51,9 @@
   [data-qlink]:hover { border-color: #835be3 !important; }
   @media (max-width: 991px) { :root { --gutter: 40px; } }
   @media (max-width: 767px) { :root { --gutter: 20px; } [data-sheet] { padding: 40px 24px 50px !important; border-radius: 10px !important; } [data-digits] { gap: 4px !important; } }
+  @media (max-width: 767px) { [data-btn] { height: 52px !important; padding: 0 20px !important; gap: 10px !important; font-size: 15px !important; } [data-lbl] { white-space: nowrap; } [data-qlinks] { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-items: center; gap: 16px !important; } }
+  @media (max-width: 479px) { [data-qlinks] { gap: 14px 10px !important; } [data-qlink] { font-size: 14px !important; } [data-btn] { height: 50px !important; padding: 0 18px !important; font-size: 14px !important; } }
+  @media (max-width: 359px) { [data-qlinks] { grid-template-columns: minmax(0, 1fr); gap: 14px !important; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 </style>
 <script>
@@ -75,11 +82,11 @@
           <p style="max-width: 620px; font-size: 16px; line-height: 28px; color: #333333; margin-top: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
           <a href="arxiki.dc.html" data-btn="" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 40px; padding: 0 34px; height: 56px; border-radius: 30px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; line-height: 26px;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><path d="M3.8 11.2 12 4.2l8.2 7"></path><path d="M6 10.4V19.6h12v-9.2"></path></svg>
-            <span>Επιστροφή στην Αρχική</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><path d="M3.8 11.2 12 4.2l8.2 7"></path><path d="M6 10.4V19.6h12v-9.2"></path></svg>
+            <span data-lbl="">Επιστροφή στην Αρχική</span>
           </a>
 
-          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 30px; margin-top: 50px; padding-top: 40px; border-top: 1px solid #2716511a; width: 100%;">
+          <div data-qlinks="" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 30px; margin-top: 50px; padding-top: 40px; border-top: 1px solid #2716511a; width: 100%;">
             <a href="ypiresies.dc.html" data-qlink="" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Υπηρεσίες</a>
             <a href="sxetika.dc.html" data-qlink="" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Σχετικά με εμένα</a>
             <a href="erotiseis.dc.html" data-qlink="" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Συχνές Ερωτήσεις</a>

@@ -49,14 +49,18 @@
   p { margin: 0; text-wrap: pretty; }
   h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
   ::selection { background: #ffb10a; color: #271651; }
+  [style*="#ffb10a"]::selection { background: #835be3; color: #ffffff; }
+  [style*="#ffb10a"] ::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"]::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"] ::selection { background: #835be3; color: #ffffff; }
   :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
   :root { --step: 80px; --gap: 40px; --gutter: 80px; }
   [data-c] { padding-left: var(--gutter); padding-right: var(--gutter); }
   [data-sec] { padding-top: var(--step); padding-bottom: var(--step); }
-  [data-g3] { grid-template-columns: repeat(3, 1fr); }
-  [data-g4] { grid-template-columns: repeat(4, 1fr); }
-  [data-g2] { grid-template-columns: 1fr 1fr; }
-  @media (max-width: 991px) { :root { --gutter: 40px; } [data-g3] { grid-template-columns: minmax(0, 1fr); } [data-g4] { grid-template-columns: repeat(2, 1fr); } [data-g2] { grid-template-columns: 1fr; } }
+  [data-g3] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  [data-g4] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  [data-g2] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  @media (max-width: 991px) { :root { --gutter: 40px; } [data-g3] { grid-template-columns: minmax(0, 1fr); } [data-g4] { grid-template-columns: repeat(2, minmax(0, 1fr)); } [data-g2] { grid-template-columns: minmax(0, 1fr); } }
   @media (max-width: 767px) { :root { --gutter: 20px; --gap: 20px; } }
   @media (min-width: 992px) and (max-width: 1319px) {
     [data-g3] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -64,7 +68,7 @@
     [data-cardtext] { padding-left: 0 !important; width: 100%; text-align: center; }
     [data-cardsec] article[data-pad] > p { text-align: center; }
   }
-  @media (max-width: 479px) { [data-g4] { grid-template-columns: 1fr; } }
+  @media (max-width: 479px) { [data-g4] { grid-template-columns: minmax(0, 1fr); } }
   [data-q] [data-qt] { color: #271651; transition: color 240ms ease; }
   [data-q] [data-qm] { background: var(--acc); color: var(--ink); transition: rotate 320ms cubic-bezier(.2,.7,.2,1), background-color 240ms ease, color 240ms ease; }
   [data-q]:hover { border-color: var(--acc) !important; }
@@ -81,6 +85,12 @@
   [data-shift="2"] [data-item]:nth-child(3n+1) { --acc: #ffb10a; --ink: #271651; }
   [data-shift="2"] [data-item]:nth-child(3n+2) { --acc: #835be3; --ink: #ffffff; }
   [data-shift="2"] [data-item]:nth-child(3n+3) { --acc: #ef5074; --ink: #ffffff; }
+  [data-shift="0"] [data-item]:nth-child(3n+3) [data-q][aria-expanded="true"]::selection,
+  [data-shift="0"] [data-item]:nth-child(3n+3) [data-q][aria-expanded="true"] ::selection,
+  [data-shift="1"] [data-item]:nth-child(3n+2) [data-q][aria-expanded="true"]::selection,
+  [data-shift="1"] [data-item]:nth-child(3n+2) [data-q][aria-expanded="true"] ::selection,
+  [data-shift="2"] [data-item]:nth-child(3n+1) [data-q][aria-expanded="true"]::selection,
+  [data-shift="2"] [data-item]:nth-child(3n+1) [data-q][aria-expanded="true"] ::selection { background: #835be3; color: #ffffff; }
   [data-msgta]::placeholder { font-weight: 500; }
   [data-panel] { display: none; }
   [data-panel][data-on="true"] { display: flex; animation: faqIn 320ms cubic-bezier(.2,.7,.2,1) both; }
@@ -90,13 +100,13 @@
   @media (max-width: 1279px) {
     [data-hero] { padding: 0 !important; }
     [data-heroblock] { padding: 80px 40px !important; background-size: auto 100% !important; }
-    [data-herogrid] { grid-template-columns: 2.5fr 1.5fr !important; }
+    [data-herogrid] { grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.5fr) !important; }
     [data-herocontact] { column-gap: 20px !important; }
     [data-herosocial] { gap: 20px !important; }
   }
   @media (max-width: 991px) {
     [data-heroblock] { padding: 80px 0 0 !important; background-image: none !important; }
-    [data-herogrid] { grid-template-columns: 1fr !important; background-image: none !important; }
+    [data-herogrid] { grid-template-columns: minmax(0, 1fr) !important; background-image: none !important; }
     [data-herocol1] { width: 100%; padding: 0 40px; }
     [data-herotitleblock] { margin-bottom: 0 !important; }
     [data-herofooter] { display: none !important; }
@@ -122,13 +132,17 @@
   [data-svc]:focus-visible [data-svc-media] { transform: scale(1.08); }
   .rv-nav:focus-visible:not(:disabled) { transform: translateY(-2px); }
   [data-gkost] { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+  [data-kcard], [data-kcard] * { -webkit-user-drag: none; user-select: text; }
   @media (max-width: 1099px) { [data-gkost] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 767px) { [data-gkost] { grid-template-columns: 1fr; gap: 20px; } [data-kcard] { padding: 20px !important; } }
+  @media (max-width: 767px) { [data-gkost] { grid-template-columns: minmax(0, 1fr); gap: 20px; } [data-kcard] { padding: 20px !important; } }
   @media (max-width: 767px) { [data-pad] { padding: 20px 20px 0 !important; } form[data-pad] { padding: 20px !important; } }
   @media (max-width: 767px) { [data-cardsec] { padding-bottom: 0 !important; } [data-cardsec] [data-g3] { grid-template-columns: minmax(0, 1fr); } [data-cardsec] article[data-pad] { min-width: 0; padding: 20px !important; } [data-cardhead] { flex-direction: column; align-items: center !important; gap: 20px; min-width: 0; } [data-cardtext] { padding-left: 0 !important; min-width: 0; width: 100%; align-self: stretch; text-align: center; } [data-cardtext] h4 { font-size: 20px !important; line-height: 30px !important; } [data-cardsec] article[data-pad] > p { text-align: center; } }
   @media (max-width: 767px) { [data-htc] { text-align: center; text-wrap: balance; } [data-rv-card] > span:first-child { justify-content: center; } [data-rv-card] > p { text-align: center; } }
+  @media (max-width: 767px) { [data-ht2] { font-size: 28px !important; line-height: 35px !important; margin: 0 12px !important; text-align: center; } [data-ht2] > span { white-space: nowrap; } }
+  @media (max-width: 479px) { [data-ht2] { font-size: 26px !important; line-height: 33px !important; } }
+  @media (max-width: 479px) { [data-name2] { display: flex; flex-direction: column; overflow-wrap: anywhere; font-size: 21px !important; } [data-namerow] { grid-template-columns: 80px minmax(0, 1fr) !important; } [data-avatar] { width: 80px !important; height: 80px !important; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } .rv-nav:hover { transform: none; } [data-svc]:hover [data-svc-media] { transform: none; } }
-  [data-gabout] { grid-template-columns: 1.111fr 0.889fr; }
+  [data-gabout] { grid-template-columns: minmax(0, 1.111fr) minmax(0, 0.889fr); }
   @media (min-width: 992px) { [data-aboutleft] { transform: translateY(-20%); } }
   @media (max-width: 991px) { [data-gabout] { grid-template-columns: minmax(0, 1fr); } [data-gabout] > * { min-width: 0; } }
 </style>
@@ -144,7 +158,7 @@
 
     <section id="hero" data-hero="" style="display: flex; flex-direction: column; align-items: center; width: 100%; overflow: hidden; background-color: #f8f8fa; padding: 0 80px;">
       <div data-heroblock="" style="position: relative; width: 100%; max-width: 1440px; padding: 80px 80px 80px 0; background-image: url(assets/hero-pattern.svg); background-position: 100% 50%; background-size: auto 85%; background-repeat: no-repeat;">
-        <div data-herogrid="" style="display: grid; grid-template-columns: 2.5fr 1.25fr; column-gap: 40px; row-gap: 80px; align-items: center; background-image: radial-gradient(circle closest-side, #ffb10a calc(100% - 1px), transparent 100%), radial-gradient(circle closest-side, #835be3 calc(100% - 1px), transparent 100%), radial-gradient(circle closest-side, #ef5074 calc(100% - 1px), transparent 100%); background-position: 25% 0, 37% 7%, 30% 75%; background-size: 20px 20px, 40px 40px, 80px 80px; background-repeat: no-repeat;">
+        <div data-herogrid="" style="display: grid; grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.25fr); column-gap: 40px; row-gap: 80px; align-items: center; background-image: radial-gradient(circle closest-side, #ffb10a calc(100% - 1px), transparent 100%), radial-gradient(circle closest-side, #835be3 calc(100% - 1px), transparent 100%), radial-gradient(circle closest-side, #ef5074 calc(100% - 1px), transparent 100%); background-position: 25% 0, 37% 7%, 30% 75%; background-size: 20px 20px, 40px 40px, 80px 80px; background-repeat: no-repeat;">
 
           <div data-herocol1="" style="position: relative; z-index: 1;">
             <div data-herotitleblock="" style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex: 1; margin-bottom: 80px;">
@@ -290,7 +304,7 @@
         <div data-head="" style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--step);">
           <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
           <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ffb10a;"></span>
-          <h2 style="font-size: 31.25px; font-weight: 700; line-height: 39.0625px; margin: 0 20px; color: #271651; position: relative; top: -3px;" data-ht="">Σχετικά με εμένα</h2>
+          <h2 style="font-size: 31.25px; font-weight: 700; line-height: 39.0625px; margin: 0 20px; color: #271651; position: relative; top: -3px;" data-ht="" data-ht2=""><span>Σχετικά</span> <span>με εμένα</span></h2>
           <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ffb10a;"></span>
           <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
         </div>
@@ -298,11 +312,11 @@
         <div data-g2="" data-gabout="" style="display: grid; gap: var(--gap) 40px; align-items: center;">
 
           <div data-aboutleft="" style="display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: center;">
-              <span style="width: 120px; height: 120px; border-radius: 50%; background: repeating-linear-gradient(45deg, #ede8fb 0 8px, #f8f8fa 8px 16px);"></span>
+            <div data-namerow="" style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; align-items: center;">
+              <span data-avatar="" style="width: 120px; height: 120px; border-radius: 50%; background: repeating-linear-gradient(45deg, #ede8fb 0 8px, #f8f8fa 8px 16px);"></span>
               <span style="display: flex; flex-direction: column; gap: 10px;">
                 <span style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: #d97706;">Τίτλος</span>
-                <h3 style="font-size: 25px; font-weight: 700; line-height: 1.25;">Ονοματεπώνυμο</h3>
+                <h3 data-name2="" style="font-size: 25px; font-weight: 700; line-height: 1.25;"><span>Όνομα</span> <span>Επίθετο</span></h3>
               </span>
             </div>
             <p style="font-size: 16px; line-height: 28px;"><strong style="font-weight: 700;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</strong></p>
@@ -496,7 +510,7 @@
 
         <div data-gkost="" style="display: grid;">
 
-          <div data-kcard="" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 30px; text-align: center;">
+          <div data-kcard="" draggable="false" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 30px; text-align: center;">
             <div style="border-radius: 15px; padding: 35px 20px; background: #ef5074; display: flex; flex-direction: column; gap: 10px;">
               <span style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: #ffffff;">ΚΑΤΗΓΟΡΙΑ</span>
               <h3 style="font-size: 21px; font-weight: 700; line-height: 31.25px; color: #ffffff;">Διά Ζώσης Συνεδρία</h3>
@@ -506,7 +520,7 @@
             <a href="kostologio-dia-zosis.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 60px; padding: 0 30px; border-radius: 30px; background: #ef5074; color: #ffffff; font-size: 16px; font-weight: 600; transition: background-color 320ms ease;" style-hover="background: #f37c98; color: #ffffff;">Δείτε τα κόστη</a>
           </div>
 
-          <div data-kcard="" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 30px; text-align: center;">
+          <div data-kcard="" draggable="false" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 30px; text-align: center;">
             <div style="border-radius: 15px; padding: 35px 20px; background: #ffb10a; display: flex; flex-direction: column; gap: 10px;">
               <span style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: #271651;">ΚΑΤΗΓΟΡΙΑ</span>
               <h3 style="font-size: 21px; font-weight: 700; line-height: 31.25px; color: #271651;">Online Συνεδρία</h3>
@@ -516,7 +530,7 @@
             <a href="kostologio-online.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 60px; padding: 0 30px; border-radius: 30px; background: #ffb10a; color: #271651; font-size: 16px; font-weight: 600; transition: background-color 320ms ease;" style-hover="background: #ffc043; color: #271651;">Δείτε τα κόστη</a>
           </div>
 
-          <div data-kcard="" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 30px; text-align: center;">
+          <div data-kcard="" draggable="false" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 30px; text-align: center;">
             <div style="border-radius: 15px; padding: 35px 20px; background: #835be3; display: flex; flex-direction: column; gap: 10px;">
               <span style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: #ffffff;">ΚΑΤΗΓΟΡΙΑ</span>
               <h3 style="font-size: 21px; font-weight: 700; line-height: 31.25px; color: #ffffff;">Οικογενειακή &amp; Ομαδική Συνεδρία</h3>

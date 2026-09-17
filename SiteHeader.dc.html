@@ -30,6 +30,10 @@
   p { margin: 0; text-wrap: pretty; }
   h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
   ::selection { background: #ffb10a; color: #271651; }
+  [style*="#ffb10a"]::selection { background: #835be3; color: #ffffff; }
+  [style*="#ffb10a"] ::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"]::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"] ::selection { background: #835be3; color: #ffffff; }
   :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
   [data-brandsub] { display: none; }
   [data-hc] { padding-left: 80px; padding-right: 80px; }
@@ -127,6 +131,13 @@
     display: inline-block;
     padding-top: 11px; padding-bottom: 11px;
     margin-top: -11px; margin-bottom: -11px;
+  }
+  @media (max-width: 319px) {
+    [data-topbar] { flex-wrap: wrap !important; row-gap: 10px !important; }
+    [data-topbar] .tel {
+      padding-top: 5px !important; padding-bottom: 5px !important;
+      margin-top: -5px !important; margin-bottom: -5px !important;
+    }
   }
   [data-hmob] [data-hc] { max-height: calc(100vh - var(--stick)); max-height: calc(100dvh - var(--stick)); }
   .menu-inner { overflow: hidden; background: #ffffff; border-top: 1px solid rgba(39, 22, 81, 0.05); box-shadow: 0 24px 40px rgba(39, 22, 81, 0.16); }

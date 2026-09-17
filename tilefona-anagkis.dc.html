@@ -44,13 +44,17 @@
   p { margin: 0; text-wrap: pretty; }
   h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
   ::selection { background: #ffb10a; color: #271651; }
+  [style*="#ffb10a"]::selection { background: #835be3; color: #ffffff; }
+  [style*="#ffb10a"] ::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"]::selection { background: #835be3; color: #ffffff; }
+  [style*="rgb(255, 177, 10)"] ::selection { background: #835be3; color: #ffffff; }
   :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
   [data-c] { padding-left: 80px; padding-right: 80px; }
   [data-sec] { padding-top: 80px; padding-bottom: 80px; }
   [data-g3] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   @media (max-width: 1089px) { [data-g3] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } }
-  @media (max-width: 767px) { [data-c] { padding-left: 20px; padding-right: 20px; } [data-sec] { padding-top: 60px; padding-bottom: 60px; } [data-g3] { grid-template-columns: 1fr; } }
+  @media (max-width: 767px) { [data-c] { padding-left: 20px; padding-right: 20px; } [data-sec] { padding-top: 60px; padding-bottom: 60px; } [data-g3] { grid-template-columns: minmax(0, 1fr); } }
   @media (max-width: 479px) { [data-pad] { padding: 24px !important; } }
   article[data-pad] > [href^="tel:"], article[data-pad] [href^="tel:"] > span:first-child { white-space: nowrap; font-size: clamp(28px, 2.8vw, 44px) !important; }
   article[data-rule] p, article[data-rule] a[href^="tel:"] > span:last-child { text-align: left; text-wrap: pretty; hyphens: manual; -webkit-hyphens: manual; }
