@@ -47,7 +47,7 @@
   [data-msgta]::placeholder { font-weight: 500; }
   [data-g2] { grid-template-columns: 1fr 1fr; }
   @media (min-width: 992px) { [data-formmap] { grid-template-columns: 0.855fr 1.145fr; } }
-  @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-g2] { grid-template-columns: 1fr; } }
+  @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-g2] { grid-template-columns: minmax(0, 1fr); } [data-g2] > * { min-width: 0; } }
   @media (max-width: 767px) { [data-c] { padding-left: 20px; padding-right: 20px; } [data-sec] { padding-top: 60px; padding-bottom: 60px; } }
   @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } }
   @media (max-width: 767px) { [data-ht] { text-align: center; text-wrap: balance; } [data-map] { min-height: 300px !important; } }
