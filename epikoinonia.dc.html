@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Επικοινωνία — Ψυχολόγος Ψυχολόγος</title>
+<meta name="description" content="Επικοινωνία — Ψυχολόγος Ψυχολόγος">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="el_GR">
+<meta property="og:site_name" content="Ψυχολόγος Ψυχολόγος">
+<meta property="og:title" content="Επικοινωνία — Ψυχολόγος Ψυχολόγος">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/logo-mark-2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
@@ -45,6 +53,10 @@
   [data-c] { padding-left: 80px; padding-right: 80px; }
   [data-sec] { padding-top: 80px; padding-bottom: 80px; }
   [data-msgta]::placeholder { font-weight: 500; }
+  @media (hover: hover) and (pointer: fine) {
+    .soc-lift:hover { transform: translateY(-3px); }
+  }
+  .soc-lift:focus-visible { transform: translateY(-3px); }
   [data-g2] { grid-template-columns: 1fr 1fr; }
   @media (min-width: 992px) { [data-formmap] { grid-template-columns: 0.855fr 1.145fr; } }
   @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-g2] { grid-template-columns: minmax(0, 1fr); } [data-g2] > * { min-width: 0; } }
@@ -195,13 +207,13 @@
             </div>
 
             <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 30px;">
-                <a href="#" aria-label="Instagram" style="width: 55.5px; height: 55.5px; border-radius: 50%; border: {{ socialBorder }}; display: flex; align-items: center; justify-content: center; color: #271651; transition: background-color 250ms ease, border-color 250ms ease, transform 250ms ease;" style-hover="background: rgba(39, 22, 81, 0.05); border-color: #271651; color: #271651; transform: translateY(-3px);">
+                <a href="#" aria-label="Instagram" class="soc-lift" style="width: 55.5px; height: 55.5px; border-radius: 50%; border: {{ socialBorder }}; display: flex; align-items: center; justify-content: center; color: #271651; transition: background-color 250ms ease, border-color 250ms ease, transform 250ms ease;" style-hover="background: rgba(39, 22, 81, 0.05); border-color: #271651; color: #271651;">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"></circle></svg>
                 </a>
-                <a href="#" aria-label="Facebook" style="width: 55.5px; height: 55.5px; border-radius: 50%; border: {{ socialBorder }}; display: flex; align-items: center; justify-content: center; color: #271651; transition: background-color 250ms ease, border-color 250ms ease, transform 250ms ease;" style-hover="background: rgba(39, 22, 81, 0.05); border-color: #271651; color: #271651; transform: translateY(-3px);">
+                <a href="#" aria-label="Facebook" class="soc-lift" style="width: 55.5px; height: 55.5px; border-radius: 50%; border: {{ socialBorder }}; display: flex; align-items: center; justify-content: center; color: #271651; transition: background-color 250ms ease, border-color 250ms ease, transform 250ms ease;" style-hover="background: rgba(39, 22, 81, 0.05); border-color: #271651; color: #271651;">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.29-.04-1.27-.12-2.41-.12-2.39 0-4.03 1.46-4.03 4.14v2.28H7.5V13h2.76v8h3.24z"></path></svg>
                 </a>
-                <a href="#" aria-label="TikTok" style="width: 55.5px; height: 55.5px; border-radius: 50%; border: {{ socialBorder }}; display: flex; align-items: center; justify-content: center; color: #271651; transition: background-color 250ms ease, border-color 250ms ease, transform 250ms ease;" style-hover="background: rgba(39, 22, 81, 0.05); border-color: #271651; color: #271651; transform: translateY(-3px);">
+                <a href="#" aria-label="TikTok" class="soc-lift" style="width: 55.5px; height: 55.5px; border-radius: 50%; border: {{ socialBorder }}; display: flex; align-items: center; justify-content: center; color: #271651; transition: background-color 250ms ease, border-color 250ms ease, transform 250ms ease;" style-hover="background: rgba(39, 22, 81, 0.05); border-color: #271651; color: #271651;">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-2.9v12.1a2.4 2.4 0 1 1-2-2.37V9.8a5.4 5.4 0 1 0 5 5.39V9.2a6.3 6.3 0 0 0 3.6 1.14V7.44A3.5 3.5 0 0 1 16.6 3z"></path></svg>
                 </a>
             </div>

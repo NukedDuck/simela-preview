@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Υπηρεσίες — Ψυχολόγος Ψυχολόγος</title>
+<meta name="description" content="Υπηρεσίες — Ψυχολόγος Ψυχολόγος">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="el_GR">
+<meta property="og:site_name" content="Ψυχολόγος Ψυχολόγος">
+<meta property="og:title" content="Υπηρεσίες — Ψυχολόγος Ψυχολόγος">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/logo-mark-2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
@@ -45,7 +53,10 @@
   @media (max-width: 767px) { :root { --gutter: 20px; --gap: 20px; } }
   @media (max-width: 479px) { [data-g4] { grid-template-columns: 1fr; } }
   [data-svc] [data-svc-media] { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1); }
-  [data-svc]:hover [data-svc-media], [data-svc]:focus-visible [data-svc-media] { transform: scale(1.08); }
+  @media (hover: hover) and (pointer: fine) {
+    [data-svc]:hover [data-svc-media] { transform: scale(1.08); }
+  }
+  [data-svc]:focus-visible [data-svc-media] { transform: scale(1.08); }
   @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } [data-svc]:hover [data-svc-media] { transform: none; } }
 </style>

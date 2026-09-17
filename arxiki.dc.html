@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ψυχολόγος Ψυχολόγος — Ψυχολόγος</title>
+<meta name="description" content="Ψυχολόγος Ψυχολόγος — Ψυχολόγος">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="el_GR">
+<meta property="og:site_name" content="Ψυχολόγος Ψυχολόγος">
+<meta property="og:title" content="Ψυχολόγος Ψυχολόγος — Ψυχολόγος">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/logo-mark-2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
@@ -48,8 +56,14 @@
   [data-g3] { grid-template-columns: repeat(3, 1fr); }
   [data-g4] { grid-template-columns: repeat(4, 1fr); }
   [data-g2] { grid-template-columns: 1fr 1fr; }
-  @media (max-width: 991px) { :root { --gutter: 40px; } [data-g3] { grid-template-columns: repeat(2, 1fr); } [data-g4] { grid-template-columns: repeat(2, 1fr); } [data-g2] { grid-template-columns: 1fr; } }
-  @media (max-width: 767px) { :root { --gutter: 20px; --gap: 20px; } [data-g3] { grid-template-columns: 1fr; } }
+  @media (max-width: 991px) { :root { --gutter: 40px; } [data-g3] { grid-template-columns: minmax(0, 1fr); } [data-g4] { grid-template-columns: repeat(2, 1fr); } [data-g2] { grid-template-columns: 1fr; } }
+  @media (max-width: 767px) { :root { --gutter: 20px; --gap: 20px; } }
+  @media (min-width: 992px) and (max-width: 1319px) {
+    [data-g3] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    [data-cardhead] { flex-direction: column; align-items: center !important; gap: 20px; }
+    [data-cardtext] { padding-left: 0 !important; width: 100%; text-align: center; }
+    [data-cardsec] article[data-pad] > p { text-align: center; }
+  }
   @media (max-width: 479px) { [data-g4] { grid-template-columns: 1fr; } }
   [data-q] [data-qt] { color: #271651; transition: color 240ms ease; }
   [data-q] [data-qm] { background: var(--acc); color: var(--ink); transition: rotate 320ms cubic-bezier(.2,.7,.2,1), background-color 240ms ease, color 240ms ease; }
@@ -98,10 +112,15 @@
   @media (max-width: 1099px) { [data-rv-card] { flex: 0 0 calc((100% - 40px) / 2); } }
   @media (max-width: 767px) { [data-rv-card] { flex: 0 0 100%; } }
   .rv-nav { transition: border-color 200ms ease, color 200ms ease, transform 150ms ease; }
-  .rv-nav:hover:not(:disabled), .rv-nav:focus-visible:not(:disabled) { border-color: #835be3; color: #835be3; transform: translateY(-2px); }
+  .rv-nav:hover:not(:disabled), .rv-nav:focus-visible:not(:disabled) { border-color: #835be3; color: #835be3; }
   .rv-dot { transition: width 250ms ease, background-color 250ms ease; }
   [data-svc] [data-svc-media] { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1); }
-  [data-svc]:hover [data-svc-media], [data-svc]:focus-visible [data-svc-media] { transform: scale(1.08); }
+  @media (hover: hover) and (pointer: fine) {
+    .rv-nav:hover:not(:disabled) { transform: translateY(-2px); }
+    [data-svc]:hover [data-svc-media] { transform: scale(1.08); }
+  }
+  [data-svc]:focus-visible [data-svc-media] { transform: scale(1.08); }
+  .rv-nav:focus-visible:not(:disabled) { transform: translateY(-2px); }
   [data-gkost] { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
   @media (max-width: 1099px) { [data-gkost] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 767px) { [data-gkost] { grid-template-columns: 1fr; gap: 20px; } [data-kcard] { padding: 20px !important; } }
@@ -682,7 +701,7 @@
 
   componentDidMount() {
     this.rvSync = () => {
-      const w = window.innerWidth;
+      const w = document.documentElement.clientWidth;
       const per = w <= 767 ? 1 : w <= 1099 ? 2 : 3;
       if (per !== this.state.rvPer) {
         this.setState((s) => ({ rvPer: per, rvIndex: Math.min(s.rvIndex, Math.max(0, this.rvCount - per)) }));

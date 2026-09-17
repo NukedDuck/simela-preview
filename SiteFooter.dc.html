@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Footer — Ψυχολόγος Ψυχολόγος</title>
+<meta name="description" content="Footer — Ψυχολόγος Ψυχολόγος">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="el_GR">
+<meta property="og:site_name" content="Ψυχολόγος Ψυχολόγος">
+<meta property="og:title" content="Footer — Ψυχολόγος Ψυχολόγος">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/logo-mark-2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
@@ -21,14 +29,40 @@
   [data-g4] { grid-template-columns: repeat(4, 1fr); }
   .f-link, .f-nav, .f-cta { transition: color 200ms ease; }
   .f-link { display: inline-block; transition: color 200ms ease, transform 150ms ease; }
-  .f-link:hover, .f-link:focus-visible { color: var(--f-accent) !important; transform: translateY(-2px); }
+  .f-link:hover, .f-link:focus-visible { color: var(--f-accent) !important; }
   .f-nav:hover, .f-nav:focus-visible { color: var(--f-fg) !important; text-decoration: underline; }
   .f-cta:hover, .f-cta:focus-visible { text-decoration: underline; }
   .f-chip { transition: background-color 200ms ease, transform 150ms ease; }
-  .f-chip:hover, .f-chip:focus-visible { background: var(--f-chip-hover) !important; transform: translateY(-2px); }
+  .f-chip:hover, .f-chip:focus-visible { background: var(--f-chip-hover) !important; }
+  @media (hover: hover) and (pointer: fine) {
+    .f-link:hover { transform: translateY(-2px); }
+    .f-chip:hover { transform: translateY(-2px); }
+  }
+  .f-link:focus-visible, .f-chip:focus-visible { transform: translateY(-2px); }
   @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-g4] { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 767px) { [data-c] { padding-left: 20px; padding-right: 20px; } [data-fnav] { width: 100%; flex-direction: column; align-items: flex-start !important; justify-content: flex-start !important; text-align: left !important; gap: 9px; } [data-fcol] { align-items: flex-start; text-align: left; } [data-fbot] { justify-content: flex-start !important; text-align: left !important; } }
   @media (max-width: 479px) { [data-g4] { grid-template-columns: 1fr; } }
+
+  [data-totop], [data-ckfab] { display: none; box-shadow: none; transition: background-color 200ms ease, opacity 200ms ease, transform 200ms ease; }
+  [data-totop]:hover, [data-totop]:active, [data-ckfab]:hover, [data-ckfab]:active { background: #a385ea; }
+  [data-totop][data-on="true"] { display: flex; animation: fabIn 240ms ease both; }
+  @keyframes fabIn { from { opacity: 0; transform: translateY(10px); } }
+  @media (max-width: 767px) { [data-ckfab] { display: flex; } }
+
+  [data-ckov] { display: none; }
+  [data-ckov][data-on="true"] { display: flex; animation: ckIn 200ms ease both; }
+  @keyframes ckIn { from { opacity: 0; } }
+  [data-ckcard] { animation: ckUp 320ms cubic-bezier(.2,.9,.3,1) both; }
+  @keyframes ckUp { from { opacity: 0; transform: translateY(20px) scale(.98); } }
+  [data-ckx] { transition: background-color 200ms ease, color 200ms ease; }
+  [data-ckx]:hover { background: #835be3; color: #ffffff; }
+  [data-sw] { background-color: rgba(39, 22, 81, 0.1); justify-content: flex-start; transition: background-color 220ms ease; }
+  [data-sw][data-on="true"] { background-color: #835be3; justify-content: flex-end; }
+  [data-sw] [data-knob] { transition: transform 220ms cubic-bezier(.2,.7,.2,1); }
+  [data-btn], [data-btn2] { transition: background-color 200ms ease, color 200ms ease; }
+  [data-btn]:hover { background: #a385ea; }
+  [data-btn2]:hover { background: #f8f8fa; }
+  @media (max-width: 767px) { [data-ckcard] { padding: 30px 24px !important; } [data-ckact] > button { flex: 1 1 100% !important; } }
 </style>
 </helmet>
 
@@ -98,6 +132,7 @@
           <a href="politiki-cookies.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Πολιτική Cookies</a>
           <a href="idiotiko-aporrito.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Ιδιωτικό Απόρρητο</a>
           <a href="404.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Σελίδα 404</a>
+          <button type="button" onClick="{{ ckOpen }}" style="align-self: flex-start; padding: 0; border: none; background: none; font-family: inherit; font-size: 15px; line-height: 26px; color: {{ fMuted }}; cursor: pointer; text-align: left;" style-hover="color: #ffffff; text-decoration: underline;">Ρυθμίσεις Cookies</button>
         </div>
       </div>
 
@@ -108,11 +143,112 @@
     </div>
 
   </div>
+
+  <button type="button" data-totop="" data-on="{{ toTopOn }}" onClick="{{ scrollTop }}" aria-label="Επιστροφή στην κορυφή" style="position: fixed; right: 24px; bottom: 24px; z-index: 60; width: 52px; height: 52px; border-radius: 26px; border: none; background: #835be3; color: #ffffff; align-items: center; justify-content: center; cursor: pointer;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5.6"></path><path d="M5.6 12 12 5.6l6.4 6.4"></path></svg>
+  </button>
+
+  <button type="button" data-ckfab="" onClick="{{ ckOpen }}" aria-label="Ρυθμίσεις Cookies" style="position: fixed; left: 24px; bottom: 24px; z-index: 60; width: 52px; height: 52px; border-radius: 26px; border: none; background: #835be3; color: #ffffff; align-items: center; justify-content: center; cursor: pointer;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 3.4 3.4 0 0 1-4.6-4.3A3.2 3.2 0 0 1 12 3z"></path><circle cx="9" cy="10" r="1.1" fill="currentColor" stroke="none"></circle><circle cx="13.4" cy="14.6" r="1.1" fill="currentColor" stroke="none"></circle><circle cx="8.6" cy="15.2" r="1" fill="currentColor" stroke="none"></circle></svg>
+  </button>
+
+  <div data-ckov="" data-on="{{ ckOn }}" onClick="{{ ckClose }}" style="position: fixed; inset: 0; z-index: 70; align-items: center; justify-content: center; padding: 24px; background: rgba(39, 22, 81, 0.55);">
+    <div data-ckcard="" role="dialog" aria-modal="true" aria-label="Ρυθμίσεις Cookies" onClick="{{ ckStop }}" style="width: 100%; max-width: 620px; max-height: 88vh; overflow-y: auto; background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 25px; color: #271651; text-align: left;">
+
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 12px; min-width: 0;">
+          <span style="width: 80px; height: 5px; border-radius: 30px; background: #835be3;"></span>
+          <h2 style="margin: 0; font-size: 25px; font-weight: 700; line-height: 34px;">Ρυθμίσεις Cookies</h2>
+        </div>
+        <button type="button" onClick="{{ ckClose }}" aria-label="Κλείσιμο" data-ckx="" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 22px; border: 1px solid #2716510d; background: #f8f8fa; color: #271651; cursor: pointer;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+        </button>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 15px;">
+
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 22px 25px; border: 1px solid #2716510d; border-radius: 15px; background: #f8f8fa;">
+          <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+            <span style="font-size: 17px; font-weight: 600; line-height: 26px;">Απαραίτητα</span>
+            <span style="font-size: 15px; line-height: 26px; color: #333333;">Χρειάζονται για τη λειτουργία του ιστότοπου.</span>
+          </div>
+          <span style="flex: 0 0 auto; padding: 0 16px; height: 32px; display: flex; align-items: center; border-radius: 16px; background: #835be3; color: #ffffff; font-size: 14px; font-weight: 600;">Πάντα ενεργά</span>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 22px 25px; border: 1px solid #2716510d; border-radius: 15px; background: #ffffff;">
+          <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+            <span style="font-size: 17px; font-weight: 600; line-height: 26px;">Στατιστικά</span>
+            <span style="font-size: 15px; line-height: 26px; color: #333333;">Μετρήσεις επισκεψιμότητας, ανώνυμα.</span>
+          </div>
+          <button type="button" data-sw="" data-on="{{ ckStats }}" aria-pressed="{{ ckStats }}" onClick="{{ ckToggleStats }}" aria-label="Στατιστικά" style="flex: 0 0 auto; width: 56px; height: 32px; border-radius: 16px; border: none; padding: 4px; cursor: pointer; display: flex; align-items: center;">
+            <span data-knob="" style="width: 24px; height: 24px; border-radius: 12px; background: #ffffff; display: block;"></span>
+          </button>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 22px 25px; border: 1px solid #2716510d; border-radius: 15px; background: #ffffff;">
+          <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+            <span style="font-size: 17px; font-weight: 600; line-height: 26px;">Marketing</span>
+            <span style="font-size: 15px; line-height: 26px; color: #333333;">Εξατομικευμένο περιεχόμενο και διαφημίσεις.</span>
+          </div>
+          <button type="button" data-sw="" data-on="{{ ckMkt }}" aria-pressed="{{ ckMkt }}" onClick="{{ ckToggleMkt }}" aria-label="Marketing" style="flex: 0 0 auto; width: 56px; height: 32px; border-radius: 16px; border: none; padding: 4px; cursor: pointer; display: flex; align-items: center;">
+            <span data-knob="" style="width: 24px; height: 24px; border-radius: 12px; background: #ffffff; display: block;"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <div data-ckact="" style="display: flex; flex-wrap: wrap; gap: 15px;">
+        <button type="button" onClick="{{ ckAcceptAll }}" data-btn="" style="flex: 1 1 200px; height: 56px; padding: 0 30px; border-radius: 30px; border: none; background: #835be3; color: #ffffff; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Αποδοχή όλων</button>
+        <button type="button" onClick="{{ ckSave }}" data-btn2="" style="flex: 1 1 200px; height: 56px; padding: 0 30px; border-radius: 30px; border: 1px solid #835be3; background: #ffffff; color: #835be3; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Αποθήκευση επιλογών</button>
+        <button type="button" onClick="{{ ckRejectAll }}" data-btn2="" style="flex: 1 1 200px; height: 56px; padding: 0 30px; border-radius: 30px; border: 1px solid #2716511a; background: #ffffff; color: #271651; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Απόρριψη μη απαραίτητων</button>
+      </div>
+
+      <a href="politiki-cookies.dc.html" style="font-size: 15px; line-height: 26px; color: #835be3;" style-hover="color: #a385ea; text-decoration: underline;">Διαβάστε την Πολιτική Cookies</a>
+
+    </div>
+  </div>
 </footer>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:620},&quot;page&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home' | 'contact'&quot;},&quot;footerColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Dark Plum #271651&quot;,&quot;Volt Dark #3C007D&quot;,&quot;Imperial Purple #5E3A9C&quot;,&quot;Deep Orchid #4B2E83&quot;,&quot;French Violet #6F2DBD&quot;,&quot;Amethyst #A663CC&quot;],&quot;default&quot;:&quot;Dark Plum #271651&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Χρώματα&quot;}}">
 class Component extends DCLogic {
+  state = { toTop: false, ckOn: false, stats: false, mkt: false };
+
+  readPrefs() {
+    try {
+      const raw = localStorage.getItem('cookiePrefs');
+      if (!raw) return null;
+      const p = JSON.parse(raw);
+      return { stats: !!p.stats, mkt: !!p.mkt };
+    } catch (e) { return null; }
+  }
+
+  writePrefs(stats, mkt) {
+    try {
+      localStorage.setItem('cookiePrefs', JSON.stringify({ stats: stats, mkt: mkt, ts: Date.now() }));
+    } catch (e) {}
+    this.setState({ stats: stats, mkt: mkt, ckOn: false });
+  }
+
   componentDidMount() {
+    const p = this.readPrefs();
+    if (p) this.setState({ stats: p.stats, mkt: p.mkt });
+    this._onScroll = () => {
+      const on = window.scrollY > 600;
+      if (on !== this.state.toTop) this.setState({ toTop: on });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+    this._onEsc = (e) => { if (e.key === 'Escape' && this.state.ckOn) this.setState({ ckOn: false }); };
+    window.addEventListener('keydown', this._onEsc);
+    this.dropGuard();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('keydown', this._onEsc);
+  }
+
+  dropGuard() {
     if (window.__siteDropGuard) return;
     window.__siteDropGuard = true;
     const idle = (fn) => (window.requestIdleCallback ? window.requestIdleCallback(fn, { timeout: 500 }) : setTimeout(fn, 1));
@@ -153,7 +289,23 @@ class Component extends DCLogic {
       fAccentHover: light ? '#3c007d' : '#ffc043',
       fChipBg: light ? '#271651' : '#ffb10a',
       fChipFg: light ? '#ffffff' : '#271651',
-      fChipHover: light ? '#3c007d' : '#ffc043'
+      fChipHover: light ? '#3c007d' : '#ffc043',
+      toTopOn: this.state.toTop ? 'true' : 'false',
+      scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      ckOn: this.state.ckOn ? 'true' : 'false',
+      ckStats: this.state.stats ? 'true' : 'false',
+      ckMkt: this.state.mkt ? 'true' : 'false',
+      ckOpen: () => {
+        const p = this.readPrefs();
+        this.setState({ ckOn: true, stats: p ? p.stats : this.state.stats, mkt: p ? p.mkt : this.state.mkt });
+      },
+      ckClose: () => this.setState({ ckOn: false }),
+      ckStop: (e) => e.stopPropagation(),
+      ckToggleStats: () => this.setState((s) => ({ stats: !s.stats })),
+      ckToggleMkt: () => this.setState((s) => ({ mkt: !s.mkt })),
+      ckAcceptAll: () => this.writePrefs(true, true),
+      ckRejectAll: () => this.writePrefs(false, false),
+      ckSave: () => this.writePrefs(this.state.stats, this.state.mkt)
     };
   }
 }
