@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="SiteHeader.dc.html" as="fetch">
+<link rel="preload" href="SiteFooter.dc.html" as="fetch">
+<style>
+  ::view-transition-old(root) { animation: dcOut 200ms cubic-bezier(0.4, 0, 1, 1) both; }
+  ::view-transition-new(root) { animation: dcIn 320ms cubic-bezier(0, 0, 0.2, 1) both; }
+  @keyframes dcOut { to { opacity: 0; } }
+  @keyframes dcIn { from { opacity: 0; } }
+  @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } }
+  @media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none; } }
+</style>
+<script>
+  if (window.top === window.self) { document.head.insertAdjacentHTML('beforeend', '<style>@view-transition { navigation: auto; }<' + '/style>'); }
+</script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f8f8fa"/><rect x="30" y="30" width="40" height="40" rx="8" fill="#835be3"/></svg></template>
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; font-family: 'Commissioner', system-ui, sans-serif; color: #271651; }
+  html { scroll-behavior: smooth; }
+  img, iframe { max-width: 100%; }
+  a { color: #835be3; text-decoration: none; }
+  a:hover { color: #a385ea; }
+  p { margin: 0; text-wrap: pretty; }
+  h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
+  ::selection { background: #ffb10a; color: #271651; }
+  :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
+  :root { --step: 80px; --gap: 40px; --gutter: 80px; }
+  [data-c] { padding-left: var(--gutter); padding-right: var(--gutter); }
+  [data-sec] { padding-top: var(--step); padding-bottom: var(--step); }
+  [data-g4] { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 991px) { :root { --gutter: 40px; } [data-g4] { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 767px) { :root { --gutter: 20px; --gap: 20px; } }
+  @media (max-width: 479px) { [data-g4] { grid-template-columns: 1fr; } }
+  [data-svc] [data-svc-media] { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1); }
+  [data-svc]:hover [data-svc-media], [data-svc]:focus-visible [data-svc-media] { transform: scale(1.08); }
+  @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } [data-svc]:hover [data-svc-media] { transform: none; } }
+</style>
+</helmet>
+
+<div style="width: 100%; background: #ffffff;">
+
+  <dc-import name="SiteHeader" page="contact" hint-size="100%,138px"></dc-import>
+
+  <main>
+    <section id="services" data-sec="" style="width: 100%; background: #ffffff;">
+      <div data-c="" style="max-width: 1600px; margin: 0 auto;">
+
+        <div data-head="" style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--step);">
+          <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
+          <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ef5074;"></span>
+          <h1 style="font-size: clamp(38px, 4vw, 45px); font-weight: 700; line-height: 1.25; margin: 0 20px; color: #271651; position: relative; top: -5px;" data-ht="">Υπηρεσίες</h1>
+          <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ef5074;"></span>
+          <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
+        </div>
+
+        <div data-g4="" style="display: grid; gap: var(--gap);">
+
+          <a href="katathlipsi.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Κατάθλιψη</span>
+          </a>
+
+          <a href="agchos.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #ffb10a; color: #271651; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Άγχος</span>
+          </a>
+
+          <a href="stres.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #ef5074; color: #ffffff; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Στρες</span>
+          </a>
+
+          <a href="penthos.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Πένθος</span>
+          </a>
+
+          <a href="diazygio.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #ffb10a; color: #271651; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Διαζύγιο</span>
+          </a>
+
+          <a href="paidia.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #ef5074; color: #ffffff; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Παιδιά &amp; Έφηβοι</span>
+          </a>
+
+          <a href="thymos.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Θυμός</span>
+          </a>
+
+          <a href="sxeseis.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #ffb10a; color: #271651; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Σχέσεις</span>
+          </a>
+
+          <a href="fovies.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Φοβίες</span>
+          </a>
+
+          <a href="ypnos.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #ffb10a; color: #271651; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Διαταραχές Ύπνου</span>
+          </a>
+
+          <a href="aftoektimisi.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #ef5074; color: #ffffff; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Αυτοεκτίμηση</span>
+          </a>
+
+          <a href="epaggelmatiki-exoythenosi.dc.html" data-svc="" style="position: relative; display: block; border-radius: 15px; overflow: hidden; background: #f8f8fa; aspect-ratio: 4 / 3;">
+            <span data-svc-media="" style="border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px); display: grid; place-items: center; font-family: ui-monospace, Menlo, monospace; font-size: 12.8px; color: #6b5b95;">ΕΙΚΟΝΑ 4:3</span>
+            <span style="position: absolute; left: 0; bottom: 0; min-width: 160px; height: 40px; padding: 0 20px; white-space: nowrap; justify-content: center; text-align: center; border-radius: 0 15px 0 15px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center;">Εξουθένωση</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" page="contact" hint-size="100%,620px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script></script>
+</body>
+</html>

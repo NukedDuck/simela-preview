@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="SiteHeader.dc.html" as="fetch">
+<link rel="preload" href="SiteFooter.dc.html" as="fetch">
+<style>
+  ::view-transition-old(root) { animation: dcOut 200ms cubic-bezier(0.4, 0, 1, 1) both; }
+  ::view-transition-new(root) { animation: dcIn 320ms cubic-bezier(0, 0, 0.2, 1) both; }
+  @keyframes dcOut { to { opacity: 0; } }
+  @keyframes dcIn { from { opacity: 0; } }
+  @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } }
+  @media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none; } }
+</style>
+<script>
+  if (window.top === window.self) { document.head.insertAdjacentHTML('beforeend', '<style>@view-transition { navigation: auto; }<' + '/style>'); }
+</script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f8f8fa"/><rect x="26" y="26" width="48" height="48" rx="10" fill="#835be3"/></svg></template>
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; font-family: 'Commissioner', system-ui, sans-serif; color: #271651; }
+  html { scroll-behavior: smooth; }
+  img, iframe { max-width: 100%; }
+  a { color: #835be3; text-decoration: none; }
+  a:hover { color: #a385ea; }
+  p { margin: 0; text-wrap: pretty; }
+  h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
+  ::selection { background: #ffb10a; color: #271651; }
+  :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
+  :root { --step: 80px; --gap: 40px; --gutter: 80px; }
+  [data-c] { padding-left: var(--gutter); padding-right: var(--gutter); }
+  [data-sec] { padding-top: var(--step); padding-bottom: var(--step); }
+  [data-gkost] { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+  @media (max-width: 1099px) { [data-gkost] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 991px) { :root { --gutter: 40px; } }
+  @media (max-width: 767px) { :root { --gutter: 20px; --gap: 20px; } [data-gkost], [data-kcard] { padding: 20px !important; } }
+  @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+</style>
+</helmet>
+
+<div style="width: 100%; background: #ffffff;">
+
+  <dc-import name="SiteHeader" page="contact" hint-size="100%,138px"></dc-import>
+
+  <main>
+    <section id="kostologio-omadiki" data-sec="" style="width: 100%; background: #f8f8fa;">
+      <div data-c="" style="max-width: 1600px; margin: 0 auto;">
+
+        <div data-head="" style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--step);">
+          <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
+          <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #835be3;"></span>
+          <h1 style="font-size: clamp(38px, 4vw, 45px); font-weight: 700; line-height: 1.25; margin: 0 20px; color: #271651; text-align: center; position: relative; top: -5px;" data-ht="">Οικογενειακή &amp; Ομαδική Συνεδρία</h1>
+          <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #835be3;"></span>
+          <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
+        </div>
+
+        <div data-gkost="">
+
+          <div data-kcard="" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 40px; text-align: center;">
+            <div style="border-radius: 15px; padding: 40px 20px; background: #ef5074; display: flex; flex-direction: column; gap: 10px;">
+              <span style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: #ffffff;">ΟΙΚΟΓΕΝΕΙΑΚΗ &amp; ΟΜΑΔΙΚΗ ΣΥΝΕΔΡΙΑ</span>
+              <h3 style="font-size: clamp(20px, 1.7vw, 25px); font-weight: 700; line-height: 1.25; color: #ffffff;">Οικογενειακή Συνεδρία<span style="display: block;">διά ζώσης</span></h3>
+              <span style="font-size: 16px; font-weight: 400; line-height: 22.25px; color: #ffffff;">[Τιμή · Διάρκεια]</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+              <span style="font-size: 16px; line-height: 28px;">Lorem ipsum dolor</span>
+              <span style="font-size: 16px; line-height: 28px;">In hendrerit ligula eget</span>
+              <span style="font-size: 16px; line-height: 28px;">Morbi tincidunt dolor</span>
+              <span style="font-size: 16px; line-height: 28px; color: rgba(39, 22, 81, 0.45);">—</span>
+              <span style="font-size: 16px; line-height: 28px; color: rgba(39, 22, 81, 0.45);">—</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <p style="font-size: 16px; line-height: 28px;">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae cras non dui non urna malesuada.</p>
+              <a href="sinedria-om-oikogeneiaki-dia-zosis.dc.html" style="font-size: 16px; font-weight: 600; line-height: 28px; color: #271651; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #835be3;">Μάθετε περισσότερα</a>
+            </div>
+            <a href="epikoinonia.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 60px; padding: 0 30px; border-radius: 30px; background: #ef5074; color: #ffffff; font-size: 16px; font-weight: 600; transition: background-color 320ms ease;" style-hover="background: #f37c98; color: #ffffff;">Κλείστε Ραντεβού</a>
+          </div>
+
+          <div data-kcard="" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 40px; text-align: center;">
+            <div style="border-radius: 15px; padding: 40px 20px; background: #835be3; display: flex; flex-direction: column; gap: 10px;">
+              <span style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: #ffffff;">ΟΙΚΟΓΕΝΕΙΑΚΗ &amp; ΟΜΑΔΙΚΗ ΣΥΝΕΔΡΙΑ</span>
+              <h3 style="font-size: clamp(20px, 1.7vw, 25px); font-weight: 700; line-height: 1.25; color: #ffffff;">Ομαδική Συνεδρία<span style="display: block;">διά ζώσης</span></h3>
+              <span style="font-size: 16px; font-weight: 400; line-height: 22.25px; color: #ffffff;">[Τιμή · Διάρκεια]</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+              <span style="font-size: 16px; line-height: 28px;">Lorem ipsum dolor</span>
+              <span style="font-size: 16px; line-height: 28px;">In hendrerit ligula eget</span>
+              <span style="font-size: 16px; line-height: 28px;">Morbi tincidunt dolor</span>
+              <span style="font-size: 16px; line-height: 28px; color: rgba(39, 22, 81, 0.45);">—</span>
+              <span style="font-size: 16px; line-height: 28px; color: rgba(39, 22, 81, 0.45);">—</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <p style="font-size: 16px; line-height: 28px;">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae cras non dui non urna malesuada.</p>
+              <a href="sinedria-omadiki-dia-zosis.dc.html" style="font-size: 16px; font-weight: 600; line-height: 28px; color: #271651; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #835be3;">Μάθετε περισσότερα</a>
+            </div>
+            <a href="epikoinonia.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 60px; padding: 0 30px; border-radius: 30px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; transition: background-color 320ms ease;" style-hover="background: #a385ea; color: #ffffff;">Κλείστε Ραντεβού</a>
+          </div>
+
+          <div data-kcard="" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 40px; text-align: center;">
+            <div style="border-radius: 15px; padding: 40px 20px; background: #ffb10a; display: flex; flex-direction: column; gap: 10px;">
+              <span style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: #271651;">ΟΙΚΟΓΕΝΕΙΑΚΗ &amp; ΟΜΑΔΙΚΗ ΣΥΝΕΔΡΙΑ</span>
+              <h3 style="font-size: clamp(20px, 1.7vw, 25px); font-weight: 700; line-height: 1.25; color: #271651;">Οικογενειακή Συνεδρία<span style="display: block;">Online</span></h3>
+              <span style="font-size: 16px; font-weight: 400; line-height: 22.25px; color: #271651;">[Τιμή · Διάρκεια]</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+              <span style="font-size: 16px; line-height: 28px;">Lorem ipsum dolor</span>
+              <span style="font-size: 16px; line-height: 28px;">In hendrerit ligula eget</span>
+              <span style="font-size: 16px; line-height: 28px;">Morbi tincidunt dolor</span>
+              <span style="font-size: 16px; line-height: 28px; color: rgba(39, 22, 81, 0.45);">—</span>
+              <span style="font-size: 16px; line-height: 28px; color: rgba(39, 22, 81, 0.45);">—</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <p style="font-size: 16px; line-height: 28px;">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae cras non dui non urna malesuada.</p>
+              <a href="sinedria-oikogeneiaki-online.dc.html" style="font-size: 16px; font-weight: 600; line-height: 28px; color: #271651; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #835be3;">Μάθετε περισσότερα</a>
+            </div>
+            <a href="epikoinonia.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 60px; padding: 0 30px; border-radius: 30px; background: #ffb10a; color: #271651; font-size: 16px; font-weight: 600; transition: background-color 320ms ease;" style-hover="background: #ffc043; color: #271651;">Κλείστε Ραντεβού</a>
+          </div>
+
+          <div data-kcard="" style="background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 40px; text-align: center;">
+            <div style="border-radius: 15px; padding: 40px 20px; background: #ef5074; display: flex; flex-direction: column; gap: 10px;">
+              <span style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: #ffffff;">ΟΙΚΟΓΕΝΕΙΑΚΗ &amp; ΟΜΑΔΙΚΗ ΣΥΝΕΔΡΙΑ</span>
+              <h3 style="font-size: clamp(20px, 1.7vw, 25px); font-weight: 700; line-height: 1.25; color: #ffffff;">Ομαδική Συνεδρία<span style="display: block;">Online</span></h3>
+              <span style="font-size: 16px; font-weight: 400; line-height: 22.25px; color: #ffffff;">[Τιμή · Διάρκεια]</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+              <span style="font-size: 16px; line-height: 28px;">Lorem ipsum dolor</span>
+              <span style="font-size: 16px; line-height: 28px;">In hendrerit ligula eget</span>
+              <span style="font-size: 16px; line-height: 28px;">Morbi tincidunt dolor</span>
+              <span style="font-size: 16px; line-height: 28px; color: rgba(39, 22, 81, 0.45);">—</span>
+              <span style="font-size: 16px; line-height: 28px; color: rgba(39, 22, 81, 0.45);">—</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <p style="font-size: 16px; line-height: 28px;">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae cras non dui non urna malesuada.</p>
+              <a href="sinedria-om-omadiki-online.dc.html" style="font-size: 16px; font-weight: 600; line-height: 28px; color: #271651; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #835be3;">Μάθετε περισσότερα</a>
+            </div>
+            <a href="epikoinonia.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 60px; padding: 0 30px; border-radius: 30px; background: #ef5074; color: #ffffff; font-size: 16px; font-weight: 600; transition: background-color 320ms ease;" style-hover="background: #f37c98; color: #ffffff;">Κλείστε Ραντεβού</a>
+          </div>
+
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: var(--step);">
+          <a href="arxiki.dc.html#kostologio" onClick="{{ goBack }}" style="display: flex; align-items: center; justify-content: center; height: 60px; padding: 0 30px; border-radius: 30px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; transition: background-color 320ms ease;" style-hover="background: #a385ea; color: #ffffff;">Επιστροφή</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" page="contact" hint-size="100%,620px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      goBack: (e) => {
+        if (window.history.length > 1) { e.preventDefault(); window.history.back(); }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

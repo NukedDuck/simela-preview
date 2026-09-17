@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="SiteHeader.dc.html" as="fetch">
+<link rel="preload" href="SiteFooter.dc.html" as="fetch">
+<style>
+  ::view-transition-old(root) { animation: dcOut 200ms cubic-bezier(0.4, 0, 1, 1) both; }
+  ::view-transition-new(root) { animation: dcIn 320ms cubic-bezier(0, 0, 0.2, 1) both; }
+  @keyframes dcOut { to { opacity: 0; } }
+  @keyframes dcIn { from { opacity: 0; } }
+  @media (max-width: 767px) { [data-sub] { margin-bottom: 40px !important; } }
+  @media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none; } }
+</style>
+<script>
+  if (window.top === window.self) { document.head.insertAdjacentHTML('beforeend', '<style>@view-transition { navigation: auto; }<' + '/style>'); }
+</script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#271651"></rect><circle cx="50" cy="50" r="26" fill="#ffb10a"></circle><text x="50" y="60" font-family="Helvetica, sans-serif" font-size="24" font-weight="700" fill="#271651" text-anchor="middle">SOS</text></svg></template>
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; font-family: 'Commissioner', system-ui, sans-serif; color: #271651; }
+  html { scroll-behavior: smooth; }
+  img, iframe { max-width: 100%; }
+  a { color: #835be3; text-decoration: none; }
+  a:hover { color: #a385ea; }
+  p { margin: 0; text-wrap: pretty; }
+  h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
+  ::selection { background: #ffb10a; color: #271651; }
+  :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
+  [data-c] { padding-left: 80px; padding-right: 80px; }
+  [data-sec] { padding-top: 80px; padding-bottom: 80px; }
+  [data-g3] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  @media (max-width: 1089px) { [data-g3] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } }
+  @media (max-width: 767px) { [data-c] { padding-left: 20px; padding-right: 20px; } [data-sec] { padding-top: 60px; padding-bottom: 60px; } [data-g3] { grid-template-columns: 1fr; } }
+  @media (max-width: 479px) { [data-pad] { padding: 24px !important; } }
+  article[data-pad] > [href^="tel:"], article[data-pad] [href^="tel:"] > span:first-child { white-space: nowrap; font-size: clamp(28px, 2.8vw, 44px) !important; }
+  article[data-rule] p, article[data-rule] a[href^="tel:"] > span:last-child { text-align: left; text-wrap: pretty; hyphens: manual; -webkit-hyphens: manual; }
+  article[data-rule] [data-ct] { text-wrap: pretty; }
+  @media (max-width: 979px) { article[data-rule] p, article[data-rule] a[href^="tel:"] > span:last-child { hyphens: auto; -webkit-hyphens: auto; } }
+  @media (max-width: 767px) {
+    [data-ht] { text-align: center; text-wrap: balance; }
+    article[data-pad] [data-short], article[data-pad] [data-short] > span:first-child { font-size: 35px !important; }
+    article[data-pad] [data-long], article[data-pad] [data-long] > span:first-child { font-size: 33px !important; }
+    article[data-pad] > [href^="tel:"] { text-align: center; }
+    article[data-pad] [href^="tel:"] { align-items: center; text-align: center; }
+    article[data-pad] [data-ct] { font-size: clamp(17px, 5.6vw, 25px) !important; line-height: 1.3; text-align: center; text-wrap: balance; }
+    article[data-pad] [data-eye] { flex-direction: column; gap: 0; align-items: center; text-align: center; }
+    article[data-pad] [data-more] { text-align: center; text-wrap: balance; }
+  }
+  @media (max-width: 767px) { [data-sub] { margin-bottom: 40px !important; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+</style>
+</helmet>
+
+<div style="width: 100%; background: #ffffff;">
+
+  <dc-import name="SiteHeader" page="contact" hint-size="100%,138px"></dc-import>
+
+  <main>
+    <section id="emergency" lang="el" data-sec="" style="width: 100%; background: #f8f8fa;">
+      <div data-c="" style="max-width: 1600px; margin: 0 auto;">
+
+        <div data-head="" style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+          <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
+          <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ffb10a;"></span>
+          <h1 style="font-size: clamp(33px, 4vw, 45px); font-weight: 700; line-height: 1.25; margin: 0 20px; color: #271651; position: relative; top: -5px;" data-ht="">Τηλέφωνα Ανάγκης</h1>
+          <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #ffb10a;"></span>
+          <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
+        </div>
+
+        <p data-sub="" style="max-width: 720px; margin: 0 auto 60px; text-align: center; font-size: 16px; font-weight: 400; line-height: 28px; color: #271651;">Αν βρίσκεστε σε άμεσο κίνδυνο, καλέστε αμέσως έναν από τους παρακάτω αριθμούς.</p>
+
+        <div data-g3="" style="display: grid; gap: 40px; align-items: start;">
+
+          <article data-pad="" data-rule="" style="background: #ffffff; border-radius: 15px; padding: 40px; min-width: 0; display: flex; flex-direction: column; gap: 20px; border: 1px solid #2716510d;">
+            <h2 data-ct="" style="font-size: 23px; font-weight: 700; line-height: 1.413;">Γραμμή Ψυχοκοινωνικής Υποστήριξης</h2>
+            <a href="tel:10306" data-short="" style="display: block; font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px; color: #271651;" style-hover="color: #835be3;">10306</a>
+            <span style="font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.2px; margin-top: 1px; color: #835be3; display: flex; flex-wrap: wrap; gap: 0 5px;" data-eye=""><span>24/7 ·</span><span>(Δωρεάν, Ανώνυμα &amp; Εμπιστευτικά)</span></span>
+            <p style="font-size: 16px; line-height: 28px; text-align: left;">24ωρη τηλεφωνική γραμμή με ψυχολόγους, για άγχος, κρίσεις πανικού, κατάθλιψη, πένθος και δύσκολες καταστάσεις.<br>Η κλήση είναι δωρεάν από σταθερό και κινητό, χωρίς να χρειάζεται να πείτε το όνομά σας.</p>
+            <a href="https://10306.gr/" target="_blank" rel="noopener noreferrer" data-more="" style="margin-top: 1px; font-size: 16px; font-weight: 600; line-height: 28px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Περισσότερες πληροφορίες στο 10306.gr</a>
+          </article>
+
+          <article data-pad="" data-rule="" style="background: #271651; border-radius: 15px; padding: 40px; min-width: 0; display: flex; flex-direction: column; gap: 20px; border: 3px solid #ffb10a;">
+            <h2 data-ct="" style="font-size: 25px; font-weight: 700; line-height: 1.3; margin-bottom: -2px; color: #ffffff;">Σε άμεσο κίνδυνο</h2>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                              <a href="tel:166" data-short="" style="display: flex; flex-direction: column; gap: 8px; color: #ffffff;" style-hover="color: #ffb10a;">
+                  <span style="font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px;">166</span>
+                  <span style="font-size: 16px; font-weight: 400; line-height: 28px; color: #ffffff;">ΕΚΑΒ (ασθενοφόρο)</span>
+                </a>
+                <span style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.25);"></span>
+                <a href="tel:100" data-short="" style="display: flex; flex-direction: column; gap: 8px; color: #ffffff;" style-hover="color: #ffb10a;">
+                  <span style="font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px;">100</span>
+                  <span style="font-size: 16px; font-weight: 400; line-height: 28px; color: #ffffff;">Αστυνομία (Τηλέφωνο &amp; SMS)</span>
+                </a>
+              <span style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.25);"></span>
+              <a href="tel:112" data-short="" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; color: #ffffff;" style-hover="color: #ffb10a;">
+                <span style="font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px;">112</span>
+                <span style="font-size: 16px; font-weight: 400; line-height: 28px; color: #ffffff;">Ενιαίος ευρωπαϊκός αριθμός έκτακτης ανάγκης. Συνδέει με Αστυνομία, ΕΚΑΒ και Πυροσβεστική — δωρεάν, απ' όλη την Ελλάδα και την ΕΕ.</span>
+              </a>
+            </div>
+          </article>
+
+          <article data-pad="" data-rule="" style="background: #ffffff; border-radius: 15px; padding: 40px; min-width: 0; display: flex; flex-direction: column; gap: 20px; border: 1px solid #2716510d;">
+            <h2 data-ct="" style="font-size: 25px; font-weight: 700; line-height: 1.3;">Πρόληψη Αυτοκτονίας</h2>
+            <a href="tel:1018" data-short="" style="display: block; font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px; color: #271651;" style-hover="color: #835be3;">1018</a>
+            <span style="font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.2px; margin-top: 1px; color: #d02650; display: flex; flex-wrap: wrap; gap: 0 5px;" data-eye=""><span>24/7 ·</span><span>(Δωρεάν, Ανώνυμα &amp; Εμπιστευτικά)</span></span>
+            <p style="font-size: 16px; line-height: 28px; text-align: left;">24ωρη Γραμμή Παρέμβασης για την Αυτοκτονία, της ΜΚΟ Κλίμακα.<br>Απευθύνεται σε όποιον έχει σκέψεις αυτοκτονίας, σε ανθρώπους που ανησυχούν για κάποιον δικό τους, καθώς και σε όσους έχουν χάσει κάποιον από αυτοκτονία. <br>Στελεχώνεται από ψυχολόγους και ψυχιάτρους, με δυνατότητα ραντεβού με ειδικό εντός 24 ωρών</p>
+            <a href="https://www.klimaka.org.gr/kentro-imeras-gia-tin-prolipsi-tis-autoktonias/" target="_blank" rel="noopener noreferrer" data-more="" style="margin-top: 1px; font-size: 16px; font-weight: 600; line-height: 28px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Περισσότερες πληροφορίες στο klimaka.org.gr</a>
+          </article>
+
+          <article data-pad="" style="background: #ffffff; border-radius: 15px; padding: 40px; min-width: 0; display: flex; flex-direction: column; gap: 20px; border: 1px solid #2716510d;">
+            <h2 data-ct="" style="font-size: 25px; font-weight: 700; line-height: 1.3;">Άμεση Κοινωνική Βοήθεια</h2>
+            <a href="tel:197" data-short="" style="display: block; font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px; color: #271651;" style-hover="color: #835be3;">197</a>
+            <span style="font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.2px; margin-top: 1px; color: {{ eyeYellow }}; {{ eyeDeco }} display: flex; flex-wrap: wrap; gap: 0 5px;" data-eye=""><span>24/7 ·</span><span>(Δωρεάν, Ανώνυμα &amp; Εμπιστευτικά)</span></span>
+            <p style="font-size: 16px; line-height: 28px; text-align: left;">Γραμμή του ΕΚΚΑ για άτομα, οικογένειες και ευάλωτες ομάδες που βιώνουν καταστάσεις έκτακτης ανάγκης.<br>Στελεχωμένη με ψυχολόγους και κοινωνικούς λειτουργούς, προσφέρει άμεση συμβουλευτική και ψυχοκοινωνική στήριξη, καθώς και σύνδεση με κοινωνικές υπηρεσίες.</p>
+            <a href="https://ekka.org.gr/index.php/el/" target="_blank" rel="noopener noreferrer" data-more="" style="margin-top: 1px; font-size: 16px; font-weight: 600; line-height: 28px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Περισσότερες πληροφορίες στο ekka.org.gr</a>
+          </article>
+
+          <article data-pad="" style="background: #ffffff; border-radius: 15px; padding: 40px; min-width: 0; display: flex; flex-direction: column; gap: 20px; border: 1px solid #2716510d;">
+            <h2 data-ct="" style="font-size: 25px; font-weight: 700; line-height: 1.3;">Παιδιά, Έφηβοι &amp; Γονείς</h2>
+            <a href="tel:116111" data-long="" style="display: block; font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px; color: #271651;" style-hover="color: #835be3;">116 111</a>
+            <span style="font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.2px; margin-top: 1px; color: #835be3; display: flex; flex-wrap: wrap; gap: 0 5px;" data-eye=""><span>24/7 ·</span><span>(Δωρεάν, Ανώνυμα &amp; Εμπιστευτικά)</span></span>
+            <p style="font-size: 16px; line-height: 28px; text-align: left;">Ευρωπαϊκή Γραμμή Υποστήριξης Παιδιών, από το Χαμόγελο του Παιδιού.<br>Στελεχώνεται αποκλειστικά από ψυχολόγους και δέχεται κλήσεις από παιδιά και εφήβους, αλλά και από γονείς ή ενήλικες που ανησυχούν για κάποιο παιδί.</p>
+            <a href="https://www.hamogelo.gr/gr/el/116111/" target="_blank" rel="noopener noreferrer" data-more="" style="margin-top: 1px; font-size: 16px; font-weight: 600; line-height: 28px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Περισσότερες πληροφορίες στο hamogelo.gr</a>
+          </article>
+
+          <article data-pad="" style="background: #ffffff; border-radius: 15px; padding: 40px; min-width: 0; display: flex; flex-direction: column; gap: 20px; border: 1px solid #2716510d;">
+            <h2 data-ct="" style="font-size: 25px; font-weight: 700; line-height: 1.3;">Παιδί σε Κίνδυνο</h2>
+            <a href="tel:1056" data-short="" style="display: block; font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px; color: #271651;" style-hover="color: #835be3;">1056</a>
+            <span style="font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.2px; margin-top: 1px; color: {{ eyeYellow }}; {{ eyeDeco }} display: flex; flex-wrap: wrap; gap: 0 5px;" data-eye=""><span>24/7 ·</span><span>(Δωρεάν, Ανώνυμα &amp; Εμπιστευτικά)</span></span>
+            <p style="font-size: 16px; line-height: 28px; text-align: left;">Εθνική Γραμμή SOS του Χαμόγελου του Παιδιού για παιδιά σε κίνδυνο: κακοποίηση, παραμέληση, εξαφάνιση.<br>Μπορεί να την καλέσει κάθε παιδί ή ενήλικας, επώνυμα ή ανώνυμα, για να ζητήσει βοήθεια ή να αναφέρει ένα περιστατικό.</p>
+            <a href="https://www.hamogelo.gr/gr/el/paidia-thimata-vias:sos-1056/" target="_blank" rel="noopener noreferrer" data-more="" style="margin-top: 1px; font-size: 16px; font-weight: 600; line-height: 28px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Περισσότερες πληροφορίες στο hamogelo.gr</a>
+          </article>
+
+          <article data-pad="" style="background: #ffffff; border-radius: 15px; padding: 40px; min-width: 0; display: flex; flex-direction: column; gap: 20px; border: 1px solid #2716510d;">
+            <h2 data-ct="" style="font-size: 25px; font-weight: 700; line-height: 1.3;">Υποστήριξη για εξαρτήσεις</h2>
+            <a href="tel:1031" data-short="" style="display: block; font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px; color: #271651;" style-hover="color: #835be3;">1031</a>
+            <span style="font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.2px; margin-top: 1px; color: #d02650; display: flex; flex-wrap: wrap; gap: 0 5px;" data-eye=""><span>Δευ–Παρ 08:00–16:00&nbsp;</span><span>(Αστική Χρέωση, Ανώνυμα &amp; Εμπιστευτικά)</span></span>
+            <p style="font-size: 16px; line-height: 28px; text-align: left;">Γραμμή SOS του ΟΚΑΝΑ για τις εξαρτήσεις από ουσίες.<br>Προσφέρει πληροφόρηση, ψυχολογική στήριξη και παραπομπή σε υπηρεσίες, σε άτομα που κάνουν χρήση αλλά και στο οικογενειακό τους περιβάλλον.</p>
+            <a href="https://www.okana.gr/" target="_blank" rel="noopener noreferrer" data-more="" style="margin-top: 1px; font-size: 16px; font-weight: 600; line-height: 28px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Περισσότερες πληροφορίες στο okana.gr</a>
+          </article>
+
+          <article data-pad="" style="background: #ffffff; border-radius: 15px; padding: 40px; min-width: 0; display: flex; flex-direction: column; gap: 20px; border: 1px solid #2716510d;">
+            <h2 data-ct="" style="font-size: 23px; font-weight: 700; line-height: 1.413;">Ελληνικό Κέντρο Ασφαλούς Διαδικτύου</h2>
+            <a href="tel:+302106007686" data-long="" style="display: block; font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px; color: #271651;" style-hover="color: #835be3;">210 600 7686</a>
+            <span style="font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.2px; margin-top: 1px; color: {{ eyeYellow }}; {{ eyeDeco }}" data-eye="">Δευ–Παρ 09:00–17:00<br>(Αστική Χρέωση · Ανώνυμα &amp; Εμπιστευτικά)</span>
+            <p style="font-size: 16px; line-height: 28px; text-align: left;">Γραμμή Βοήθειας του Ελληνικού Κέντρου Ασφαλούς Διαδικτύου, με γιατρούς και ψυχολόγους.<br>Τηλέφωνο, chat και email για παιδιά, εφήβους και γονείς που αντιμετωπίζουν εκφοβισμό, ακατάλληλο περιεχόμενο, εθισμό ή άλλο πρόβλημα στο διαδίκτυο.</p>
+            <a href="https://www.help-line.gr/" target="_blank" rel="noopener noreferrer" data-more="" style="margin-top: 1px; font-size: 16px; font-weight: 600; line-height: 28px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Περισσότερες πληροφορίες στο help-line.gr</a>
+          </article>
+
+          <article data-pad="" style="background: #ffffff; border-radius: 15px; padding: 40px; min-width: 0; display: flex; flex-direction: column; gap: 20px; border: 1px solid #2716510d;">
+            <h2 data-ct="" style="font-size: 25px; font-weight: 700; line-height: 1.3;">Κέντρο Δηλητηριάσεων</h2>
+            <a href="tel:+302107793777" data-long="" style="display: block; font-size: 43px; font-weight: 700; line-height: 1; letter-spacing: -1px; color: #271651;" style-hover="color: #835be3;">210 779 3777</a>
+            <span style="font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.2px; margin-top: 1px; color: #835be3;" data-eye="">24/7 (365 ημέρες &amp; αργίες · Αστική Χρέωση)</span>
+            <p style="font-size: 16px; line-height: 28px; text-align: left;">Γραμμή του Κέντρου Δηλητηριάσεων (Νοσοκομείο Παίδων «Π. &amp; Α. Κυριακού») για περιστατικά δηλητηρίασης σε κάθε ηλικία. Δίνει στο κοινό και σε επαγγελματίες υγείας άμεσες οδηγίες αντιμετώπισης για την πρώτη κρίσιμη ώρα.</p>
+            <a href="https://aglaiakyriakou.gr/?page_id=75" target="_blank" rel="noopener noreferrer" data-more="" style="margin-top: 1px; font-size: 16px; font-weight: 600; line-height: 28px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Περισσότερες πληροφορίες στο aglaiakyriakou.gr</a>
+          </article>
+
+        </div>
+
+        <div style="max-width: 1000px; margin: 60px auto 0; padding-top: 40px; border-top: 1px solid #cccccc; display: flex; flex-direction: column; gap: 20px; text-align: center;">
+          <p style="font-size: 15.5px; line-height: 28px; color: #271651;">Ο παρών ιστότοπος δεν αποτελεί υπηρεσία έκτακτης ανάγκης και δεν παρέχει άμεση υποστήριξη σε καταστάσεις κρίσης.<br>Σε περίπτωση άμεσου κινδύνου, για εσάς ή για κάποιον δικό σας άνθρωπο, καλέστε το 112 ή απευθυνθείτε στα Επείγοντα (ΤΕΠ) του πλησιέστερου εφημερεύοντος νοσοκομείου.</p>
+          <p style="font-size: 15.5px; line-height: 28px; color: #271651;">Οι παραπάνω γραμμές είναι υπηρεσίες ανεξάρτητων φορέων και οργανώσεων και δεν συνδέονται με τον ιστότοπο [domain.gr]. Τα στοιχεία των γραμμών (αριθμοί, ωράρια, χρεώσεις)&nbsp;<span style="text-wrap-mode: initial;">μπορεί να αλλάξουν ανά πάσα στιγμή</span><span style="text-wrap-mode: initial;">&nbsp;και παρατίθενται εδώ αποκλειστικά για ενημέρωση.</span><br></p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" page="contact" hint-size="100%,620px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;yellowShade&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1α Ζεστό Άμπερ #D97706&quot;,&quot;Σκούρο κίτρινο #9a6700&quot;,&quot;Σκούρο μωβ #271651&quot;,&quot;1β Άμπερ σκούρο #B45309&quot;,&quot;2α Μουστάρδα #CA8A04&quot;,&quot;2β Χρυσό #B58900&quot;,&quot;3 Βαθιά Ώχρα #854D0E&quot;,&quot;4 Χρυσοκίτρινο #EAB308&quot;],&quot;default&quot;:&quot;1α Ζεστό Άμπερ #D97706&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Κίτρινο eyebrow&quot;},&quot;yellowEmphasis&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Καμία&quot;,&quot;Σκιά&quot;,&quot;Περίγραμμα&quot;],&quot;default&quot;:&quot;Καμία&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Κίτρινο eyebrow&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const shade = ({
+      'Σκούρο κίτρινο #9a6700': '#9a6700',
+      'Σκούρο μωβ #271651': '#271651',
+      '1α Ζεστό Άμπερ #D97706': '#d97706',
+      '1β Άμπερ σκούρο #B45309': '#b45309',
+      '2α Μουστάρδα #CA8A04': '#ca8a04',
+      '2β Χρυσό #B58900': '#b58900',
+      '3 Βαθιά Ώχρα #854D0E': '#854d0e',
+      '4 Χρυσοκίτρινο #EAB308': '#eab308'
+    })[this.props.yellowShade ?? '1α Ζεστό Άμπερ #D97706'] || '#d97706';
+    const emphasis = this.props.yellowEmphasis ?? 'Καμία';
+    const chip = 'display: inline-flex; padding: 4px 10px; border-radius: 20px; ';
+    const deco = emphasis === 'Σκιά'
+      ? chip + 'box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);'
+      : emphasis === 'Περίγραμμα'
+        ? chip + 'border: 1px solid ' + shade + ';'
+        : '';
+    return { eyeYellow: shade, eyeDeco: deco };
+  }
+}
+</script>
+</body>
+</html>

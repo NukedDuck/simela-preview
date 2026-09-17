@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="SiteHeader.dc.html" as="fetch">
+<link rel="preload" href="SiteFooter.dc.html" as="fetch">
+<style>
+  ::view-transition-old(root) { animation: dcOut 200ms cubic-bezier(0.4, 0, 1, 1) both; }
+  ::view-transition-new(root) { animation: dcIn 320ms cubic-bezier(0, 0, 0.2, 1) both; }
+  @keyframes dcOut { to { opacity: 0; } }
+  @keyframes dcIn { from { opacity: 0; } }
+  @media (max-width: 767px) { [data-img] { order: -1; } }
+  @media (max-width: 767px) { [data-h3] { line-height: 31.25px; margin-top: 0 !important; } }
+  @media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none; } }
+</style>
+<script>
+  if (window.top === window.self) { document.head.insertAdjacentHTML('beforeend', '<style>@view-transition { navigation: auto; }<' + '/style>'); }
+</script>
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; font-family: 'Commissioner', system-ui, sans-serif; color: #271651; }
+  html { scroll-behavior: smooth; }
+  img, iframe { max-width: 100%; }
+  a { color: #835be3; text-decoration: none; }
+  a:hover { color: #a385ea; }
+  p { margin: 0; text-wrap: pretty; }
+  h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
+  ::selection { background: #ffb10a; color: #271651; }
+  :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
+  [data-c] { padding-left: 80px; padding-right: 80px; }
+  [data-sec] { padding-top: 80px; padding-bottom: 80px; }
+  [data-detail] { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-detail] { grid-template-columns: 1fr; } }
+  @media (max-width: 767px) { [data-c] { padding-left: 20px; padding-right: 20px; } }
+  @media (max-width: 767px) { [data-img] { order: -1; } }
+  @media (max-width: 767px) { [data-h3] { line-height: 31.25px; margin-top: 0 !important; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+</style>
+</helmet>
+
+<div style="width: 100%; background: #ffffff;">
+
+  <dc-import name="SiteHeader" page="contact" hint-size="100%,138px"></dc-import>
+
+  <main>
+    <section data-sec="" style="width: 100%; background: #ffffff;">
+      <div data-c="" style="max-width: 1600px; margin: 0 auto;">
+
+        <div data-detail="" style="display: grid; gap: 40px; align-items: start;">
+
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <h1 style="font-size: clamp(39.06px, 4vw, 47px); font-weight: 700; line-height: 1.25;">Άγχος και Στρες</h1>
+            <p style="font-size: 16px; font-weight: 700; line-height: 28px; max-width: 620px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h3 data-h3="" style="font-size: 25px; font-weight: 700; line-height: 1.3; margin-top: 20px;">Lorem ipsum dolor sit</h3>
+            <p style="font-size: 16px; line-height: 28px; max-width: 620px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+          </div>
+
+          <span data-img="" style="display: block; width: 100%; aspect-ratio: 4 / 3; border-radius: 15px; background: repeating-linear-gradient(45deg, #ede8fb 0 10px, #f8f8fa 10px 20px);"></span>
+
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 40px;">
+          <h3 data-h3="" style="font-size: 25px; font-weight: 700; line-height: 1.3;">Lorem ipsum dolor sit</h3>
+          <p style="font-size: 16px; line-height: 28px;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</p>
+          <h3 data-h3="" style="font-size: 25px; font-weight: 700; line-height: 1.3; margin-top: 20px;">Lorem ipsum dolor sit</h3>
+          <p style="font-size: 16px; line-height: 28px;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" page="contact" hint-size="100%,620px"></dc-import>
+
+</div>
+</x-dc>
+</body>
+</html>

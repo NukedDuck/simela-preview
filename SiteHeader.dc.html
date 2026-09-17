@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; font-family: 'Commissioner', system-ui, sans-serif; color: #271651; }
+  html { scroll-behavior: smooth; }
+  img, iframe { max-width: 100%; }
+  a { color: #835be3; text-decoration: none; }
+  a:hover { color: #a385ea; }
+  p { margin: 0; text-wrap: pretty; }
+  h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
+  ::selection { background: #ffb10a; color: #271651; }
+  :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
+  [data-brandsub] { display: none; }
+  [data-hc] { padding-left: 80px; padding-right: 80px; }
+  [data-hrow] > [data-brand] { flex: 0 1 auto !important; min-width: 0; }
+  [data-brand] > span { min-width: 0; }
+  [data-brandname], [data-brandsub] { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  [data-hnav] { display: flex; }
+  [data-hburger] { display: none; }
+  @media (min-width: 1600px) { [data-brandsub] { display: block; } }
+  @media (min-width: 1280px) and (max-width: 1599px) { [data-brandsub] { display: block; font-size: 11px !important; line-height: 14px !important; letter-spacing: 0.8px !important; white-space: normal; overflow: visible; text-overflow: clip; } }
+  @media (min-width: 1320px) { [data-hmob] { display: none; } }
+  @media (max-width: 1279px) { [data-hc] { padding-left: 40px; padding-right: 40px; } }
+  @media (max-width: 1599px) { [data-hnav] .nav-item { padding-left: 13px !important; padding-right: 13px !important; } }
+  @media (max-width: 1319px) { [data-hnav] { display: none; } [data-hburger] { display: flex; } }
+  @media (max-width: 767px) { [data-hc] { padding-left: 20px; padding-right: 20px; } }
+  @media (max-width: 479px) { [data-hide479] { display: none; } }
+  @media (max-width: 767px) {
+    [data-brandlogo] { height: 51px !important; }
+    [data-brandname] { font-size: 21.25px !important; line-height: 24px !important; }
+    [data-brandsub] { display: block !important; font-size: 10.9px !important; line-height: 14px !important; letter-spacing: 1.275px !important; white-space: normal; }
+    [data-brand] { flex: 1 1 auto !important; min-width: 0; gap: 12px !important; }
+    [data-brand] > span { min-width: 0; }
+    [data-hburger] { flex: 0 0 auto; }
+    .tel { font-size: 14.5px !important; }
+    [data-topbar] { flex-wrap: nowrap !important; gap: 0 12px !important; }
+    [data-topbar] [data-hide479] { display: none; }
+    [data-topbar] .tel { font-size: clamp(11.5px, 3.4vw, 13px) !important; white-space: nowrap; }
+    [data-hc] > span[aria-hidden="true"] { display: none; }
+  }
+  @media (max-width: 409px) { [data-brandsub] { font-size: 9.5px !important; letter-spacing: 0.4px !important; } }
+
+  div:has(> header[data-site-header]) { display: contents; }
+
+  .tel { transition: color 200ms ease; }
+  .tel:hover, .tel:focus-visible, .tel:active { color: #ffb10a !important; }
+
+  [data-cta] { transition: background-color 200ms ease; }
+  [data-cta]:hover, [data-cta]:focus-visible, [data-cta]:active { background: #a385ea !important; color: #ffffff !important; }
+
+  .nav-item { transition: color 200ms ease; }
+  .nav-item:hover, .nav-item:focus-visible { color: #835be3 !important; }
+
+  .nav-sub { position: relative; z-index: 0; color: #271651; transition: color 200ms ease; }
+  .nav-sub::before { content: ""; position: absolute; inset: 0; border-radius: 15px; background: transparent; z-index: -1; transform: scale(1); transition: background-color 220ms ease, transform 220ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .nav-sub:hover, .nav-sub:focus-visible { color: #835be3; }
+  .nav-sub:hover::before, .nav-sub:focus-visible::before { background: #f8f8fa; transform: scale(1.03); }
+
+  @keyframes ddIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  .dd { animation: ddIn 220ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+  .burger,
+  .burger:hover,
+  .burger:active,
+  .burger[data-open="true"] {
+    background: #835be3 !important;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .burger:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px #271651;
+  }
+
+  .bx {
+    position: relative; display: block;
+    width: 20px; height: 14px;
+    transition: rotate 450ms cubic-bezier(.3,.9,.35,1);
+  }
+  .ln {
+    position: absolute; left: 0;
+    width: 20px; height: 2px; border-radius: 2px;
+    background: #ffffff;
+    transition:
+      translate 300ms cubic-bezier(.2,.7,.2,1),
+      rotate    300ms cubic-bezier(.2,.7,.2,1),
+      scale     300ms cubic-bezier(.2,.7,.2,1),
+      opacity   200ms;
+  }
+  .ln1 { top: 0; }
+  .ln2 { top: 6px; }
+  .ln3 { top: 12px; }
+
+  .burger[data-open="true"] .bx { rotate: 180deg; }
+  .burger[data-open="true"] .ln1 { translate: 0 6px; rotate: 45deg; }
+  .burger[data-open="true"] .ln2 { opacity: 0; scale: 0 1; }
+  .burger[data-open="true"] .ln3 { translate: 0 -6px; rotate: -45deg; }
+
+  .menu-wrap { display: block; max-height: 0; overflow: hidden; opacity: 0; pointer-events: none; transition: max-height 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms ease; }
+  .menu-wrap[data-open="true"] { max-height: calc(100dvh - 100px); opacity: 1; pointer-events: auto; }
+  .menu-inner { overflow: hidden; background: #ffffff; border-top: 1px solid rgba(39, 22, 81, 0.05); box-shadow: 0 24px 40px rgba(39, 22, 81, 0.16); }
+  .sub { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 340ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .sub[data-open="true"] { grid-template-rows: 1fr; }
+  .sub-in { overflow: hidden; display: flex; flex-direction: column; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    .nav-sub:hover::before { transform: scale(1); }
+  }
+</style>
+</helmet>
+
+<header data-site-header="" style="position: relative; z-index: 60; width: 100%;">
+
+  <div style="width: 100%; background: {{ tbBg }};">
+    <div data-hc="" data-topbar="" style="width: 100%; min-height: 38px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 20px; padding-top: 7.5px; padding-bottom: 7.5px;">
+      <span data-hide479="" style="font-size: 15.5px; line-height: 23px; color: #ffffff;">Χρειάζεστε άμεση υποστήριξη;</span>
+      <a href="tel:10306" class="tel" style="font-size: 15.5px; line-height: 23px; color: #ffffff; text-decoration: underline; text-underline-offset: 3px;"><strong style="font-weight: 700;">10306</strong> · δωρεάν &amp; ανώνυμα, 24/7</a>
+      <span aria-hidden="true" style="width: 1px; height: 15.5px; background: #ffffff; opacity: 0.5; border-radius: 1px; flex: 0 0 auto;"></span>
+      <a href="tel:112" class="tel" style="font-size: 15.5px; line-height: 23px; color: #ffffff; text-decoration: underline; text-underline-offset: 3px;"><strong style="font-weight: 700;">112</strong> · σε άμεσο κίνδυνο</a>
+    </div>
+  </div>
+
+  <div style="width: 100%; background: #ffffff; box-shadow: {{ hdrShadow }}; transition: box-shadow 250ms ease;">
+    <div data-hc="" style="width: 100%; padding-top: 20px; padding-bottom: 20px;">
+      <div data-hrow="" style="width: 100%; min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+
+        <a href="{{ hHome }}" data-brand="" style="display: flex; align-items: center; gap: 20px; height: 60px; color: #271651; flex: 0 0 auto;" style-hover="color: #271651;">
+          <img data-brandlogo="" src="assets/logo-mark-2.png" alt="" style="height: 60px; width: auto; object-fit: contain; display: block; flex: 0 0 auto;">
+          <span style="display: flex; flex-direction: column; gap: 2px;">
+            <span data-brandname="" style="font-size: 25px; font-weight: 600; line-height: 28px;">Ψυχολόγος Ψυχολόγος</span>
+            <span data-brandsub="" style="font-size: 12.8px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; color: rgba(39, 22, 81, 0.6);">Online &amp; Διά Ζώσης Συμβουλευτική Ψυχοθεραπεία</span>
+          </span>
+        </a>
+
+        <div data-hnav="" style="align-items: center; flex: 0 0 auto;">
+          <nav aria-label="Κύρια πλοήγηση" style="display: flex; align-items: center;">
+            <a href="{{ hHome }}" class="nav-item" style="display: flex; align-items: center; height: 60px; font-size: 16px; font-weight: 600; line-height: 28px; padding: 16px 20px; color: #271651;">Αρχική</a>
+            <div data-dd="" style="position: relative; display: flex; align-items: center;" onMouseEnter="{{ openSrv }}" onMouseLeave="{{ closeSrv }}">
+              <a href="{{ hServices }}" class="nav-item" aria-haspopup="true" aria-expanded="{{ srvOpen }}" onFocus="{{ openSrv }}" onKeyDown="{{ onSrvKey }}" style="display: flex; align-items: center; gap: 10px; height: 60px; font-size: 16px; font-weight: 600; line-height: 28px; padding: 16px 20px; color: #271651;">Υπηρεσίες
+                <svg width="10" height="7" viewBox="0 0 12 8" fill="none" aria-hidden="true" style="opacity: 0.6; transform: rotate({{ srvRot }}deg); transition: transform 200ms ease;"><path d="M1 1.5 6 6.5 11 1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <sc-if value="{{ srvOpen }}" hint-placeholder-val="{{ false }}">
+                <div class="dd" style="position: absolute; top: 100%; left: 0; min-width: 260px; background: #ffffff; border-radius: 15px; box-shadow: 0 18px 44px rgba(39, 22, 81, 0.12); padding: 10px; display: flex; flex-direction: column;">
+                  <a href="ypiresies.dc.html" class="nav-sub" onClick="{{ closeSrv }}" style="padding: 13px 22px; border-radius: 15px; font-size: 16px; font-weight: 600; line-height: 28px;">Όλες οι Υπηρεσίες</a>
+                  <a href="kostologio.dc.html" class="nav-sub" onClick="{{ closeSrv }}" style="padding: 13px 22px; border-radius: 15px; font-size: 16px; font-weight: 600; line-height: 28px;">Κόστος Συνεδριών</a>
+                </div>
+              </sc-if>
+            </div>
+            <a href="{{ hAbout }}" class="nav-item" style="display: flex; align-items: center; height: 60px; font-size: 16px; font-weight: 600; line-height: 28px; padding: 16px 20px; color: #271651;">Σχετικά με εμένα</a>
+            <a href="{{ hFaq }}" class="nav-item" style="display: flex; align-items: center; height: 60px; font-size: 16px; font-weight: 600; line-height: 28px; padding: 16px 20px; color: #271651;">Συχνές Ερωτήσεις</a>
+            <a href="tilefona-anagkis.dc.html" class="nav-item" style="display: flex; align-items: center; height: 60px; font-size: 16px; font-weight: 600; line-height: 28px; padding: 16px 20px; color: #271651;">Τηλέφωνα Ανάγκης</a>
+          </nav>
+          <a href="epikoinonia.dc.html" data-cta="" style="display: flex; align-items: center; height: 60px; margin-left: 20px; padding: 0 40px; border-radius: 30px; border: none; box-shadow: none; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; line-height: 28px; white-space: nowrap; flex: 0 0 auto;" style-hover="background: #a385ea; color: #ffffff;" style-active="background: #a385ea; color: #ffffff;">Επικοινωνία</a>
+        </div>
+
+        <button type="button" class="burger" data-hburger="" data-open="{{ menuOpenAttr }}" aria-expanded="{{ menuOpen }}" aria-label="Μενού" onClick="{{ toggleMenu }}" style="width: 60px; height: 60px; border-radius: 30px; border: none; background: #835be3; padding: 0; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto;">
+          <span class="bx" aria-hidden="true">
+            <span class="ln ln1"></span>
+            <span class="ln ln2"></span>
+            <span class="ln ln3"></span>
+          </span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <div data-hmob="" class="menu-wrap" data-open="{{ menuOpenAttr }}" style="position: absolute; top: 100%; left: 0; width: 100%; z-index: 150;">
+    <div class="menu-inner">
+      <nav data-hc="" aria-label="Πλοήγηση κινητού" style="width: 100%; display: flex; flex-direction: column; padding-top: 20px; padding-bottom: 20px; max-height: calc(100dvh - 110px); overflow-y: auto;">
+        <a href="{{ hHome }}" class="nav-item" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 52px; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(39, 22, 81, 0.05); font-size: 16px; font-weight: 600; color: #271651;">Αρχική</a>
+        <button type="button" aria-expanded="{{ accSrv }}" onClick="{{ toggleAccSrv }}" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 52px; padding: 10px 0; border: none; border-bottom: 1px solid rgba(39, 22, 81, 0.05); background: transparent; font-family: 'Commissioner', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: #271651; text-align: left; cursor: pointer;">Υπηρεσίες
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="flex: 0 0 auto; transform: rotate({{ accSrvRot }}deg); transition: transform 200ms ease;"><path d="M0 0h10L5 6z" fill="currentColor"></path></svg>
+        </button>
+        <div class="sub" data-open="{{ accSrvAttr }}">
+          <div class="sub-in">
+            <a href="ypiresies.dc.html" class="nav-sub" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 52px; padding: 13px 22px; border-radius: 15px; margin-bottom: 5px; font-size: 16px; font-weight: 400;">Όλες οι Υπηρεσίες</a>
+            <a href="kostologio.dc.html" class="nav-sub" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 52px; padding: 13px 22px; border-radius: 15px; margin-bottom: 5px; font-size: 16px; font-weight: 400;">Κόστος Συνεδριών</a>
+          </div>
+        </div>
+        <a href="{{ hAbout }}" class="nav-item" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 52px; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(39, 22, 81, 0.05); font-size: 16px; font-weight: 600; color: #271651;">Σχετικά με εμένα</a>
+        <a href="{{ hFaq }}" class="nav-item" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 52px; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(39, 22, 81, 0.05); font-size: 16px; font-weight: 600; color: #271651;">Συχνές Ερωτήσεις</a>
+
+        <a href="tilefona-anagkis.dc.html" class="nav-item" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 52px; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(39, 22, 81, 0.05); font-size: 16px; font-weight: 600; color: #271651;">Τηλέφωνα Ανάγκης</a>
+        <a href="epikoinonia.dc.html" data-cta="" onClick="{{ closeMenu }}" style="display: flex; align-items: center; justify-content: center; height: 60px; min-height: 60px; margin-top: 20px; padding: 0 40px; border-radius: 30px; border: none; box-shadow: none; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; line-height: 28px;" style-hover="background: #a385ea; color: #ffffff;" style-active="background: #a385ea; color: #ffffff;">Επικοινωνία</a>
+
+      </nav>
+    </div>
+  </div>
+
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:180},&quot;page&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home' | 'contact'&quot;},&quot;topbarColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Dark Plum #271651&quot;,&quot;Volt Dark #3C007D&quot;,&quot;Imperial Purple #5E3A9C&quot;,&quot;Deep Orchid #4B2E83&quot;,&quot;French Violet #6F2DBD&quot;,&quot;Amethyst #A663CC&quot;],&quot;default&quot;:&quot;Dark Plum #271651&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { dropOpen: false, srvOpen: false, menuOpen: false, acc: null, active: '', scrolled: false };
+
+  componentDidMount() {
+    this.sync = () => {
+      const el = document.querySelector('[data-site-header]');
+      const h = el ? el.offsetHeight + 12 : 151;
+      document.documentElement.style.setProperty('--stick', h + 'px');
+      document.documentElement.style.scrollPaddingTop = h + 'px';
+      if (window.innerWidth >= 992 && (this.state.menuOpen || this.state.acc)) this.setState({ menuOpen: false, acc: null });
+    };
+    this.onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    this.onPointerDown = (e) => {
+      const t = e.target;
+      if (!(t.closest && t.closest('[data-dd]'))) {
+        if (this.state.dropOpen) this.setState({ dropOpen: false });
+        if (this.state.srvOpen) this.setState({ srvOpen: false });
+      }
+      if (this.state.menuOpen && !(t.closest && (t.closest('[data-hmob]') || t.closest('[data-hburger]')))) this.setState({ menuOpen: false });
+    };
+    this.onKey = (e) => { if (e.key === 'Escape') this.setState({ dropOpen: false, srvOpen: false, menuOpen: false }); };
+    this.sync();
+    this.onScroll();
+    const idle = (fn) => (window.requestIdleCallback ? window.requestIdleCallback(fn, { timeout: 500 }) : setTimeout(fn, 1));
+    idle(() => {
+      window.addEventListener('resize', this.sync, { passive: true });
+      window.addEventListener('scroll', this.onScroll, { passive: true });
+      document.addEventListener('pointerdown', this.onPointerDown);
+    });
+    document.addEventListener('keydown', this.onKey);
+    if (this.props.page !== 'contact') {
+      const ids = ['hero', 'services', 'about', 'faq', 'reviews'];
+      this.io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) this.setState({ active: e.target.id }); });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      setTimeout(() => ids.forEach((id) => { const n = document.getElementById(id); if (n) this.io.observe(n); }), 60);
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.sync);
+    window.removeEventListener('scroll', this.onScroll);
+    document.removeEventListener('pointerdown', this.onPointerDown);
+    document.removeEventListener('keydown', this.onKey);
+    if (this.io) this.io.disconnect();
+  }
+
+  renderVals() {
+    const contact = this.props.page === 'contact';
+    const a = this.state.active;
+    const on = '#835be3', off = 'transparent';
+    const acc = this.state.acc;
+    const tb = String(this.props.topbarColor ?? 'Dark Plum #271651');
+    const tbHex = (tb.match(/#[0-9a-fA-F]{3,8}/) || ['#271651'])[0];
+    return {
+      tbBg: tbHex,
+      hdrShadow: this.state.scrolled ? '0 7px 22px rgba(39, 22, 81, 0.09)' : '0 0 40px -20px rgba(0, 0, 0, 0.25)',
+      hHome: 'arxiki.dc.html',
+      hServices: 'ypiresies.dc.html',
+      hAbout: 'sxetika.dc.html',
+      hFaq: 'erotiseis.dc.html',
+      srvOpen: this.state.srvOpen,
+      srvRot: this.state.srvOpen ? 180 : 0,
+      openSrv: () => this.setState({ srvOpen: true, dropOpen: false }),
+      closeSrv: () => this.setState({ srvOpen: false }),
+      onSrvKey: (e) => {
+        if (e.key === 'Escape') this.setState({ srvOpen: false });
+        else if (e.key === 'ArrowDown') { e.preventDefault(); this.setState({ srvOpen: true }); }
+      },
+      accSrv: acc === 'services',
+      accSrvAttr: acc === 'services' ? 'true' : 'false',
+      accSrvRot: acc === 'services' ? 180 : 0,
+      toggleAccSrv: () => this.setState((s) => ({ acc: s.acc === 'services' ? null : 'services' })),
+      menuOpen: this.state.menuOpen,
+      menuOpenAttr: this.state.menuOpen ? 'true' : 'false',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen, dropOpen: false, srvOpen: false })),
+      closeMenu: () => this.setState({ menuOpen: false, acc: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="SiteHeader.dc.html" as="fetch">
+<link rel="preload" href="SiteFooter.dc.html" as="fetch">
+<style>
+  ::view-transition-old(root) { animation: dcOut 200ms cubic-bezier(0.4, 0, 1, 1) both; }
+  ::view-transition-new(root) { animation: dcIn 320ms cubic-bezier(0, 0, 0.2, 1) both; }
+  @keyframes dcOut { to { opacity: 0; } }
+  @keyframes dcIn { from { opacity: 0; } }
+  @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } [data-ht] { text-align: center; text-wrap: balance; } }
+  @media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none; } }
+</style>
+<script>
+  if (window.top === window.self) { document.head.insertAdjacentHTML('beforeend', '<style>@view-transition { navigation: auto; }<' + '/style>'); }
+</script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f8f8fa"/><rect x="26" y="26" width="48" height="48" rx="10" fill="#835be3"/></svg></template>
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; font-family: 'Commissioner', system-ui, sans-serif; color: #271651; }
+  html { scroll-behavior: smooth; }
+  img, iframe { max-width: 100%; }
+  a { color: #835be3; text-decoration: none; }
+  a:hover { color: #a385ea; }
+  p { margin: 0; text-wrap: pretty; }
+  h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
+  ::selection { background: #ffb10a; color: #271651; }
+  :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
+  :root { --step: 80px; --gap: 40px; --gutter: 80px; }
+  [data-c] { padding-left: var(--gutter); padding-right: var(--gutter); }
+  [data-sec] { padding-top: var(--step); padding-bottom: var(--step); }
+  @media (max-width: 991px) { :root { --gutter: 40px; } }
+  @media (max-width: 767px) { :root { --gutter: 20px; --gap: 20px; } [data-sheet] { padding: 10px 24px 30px !important; border-radius: 10px !important; } [data-rule] { padding-top: 30px !important; margin-top: 30px !important; grid-template-columns: 38px minmax(0, 1fr) !important; column-gap: 14px !important; } }
+  @media (max-width: 767px) { [data-head] { margin-bottom: 60px !important; } [data-ht] { text-align: center; text-wrap: balance; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+</style>
+</helmet>
+
+<div style="width: 100%; background: #ffffff;">
+
+  <dc-import name="SiteHeader" page="contact" hint-size="100%,138px"></dc-import>
+
+  <main>
+    <section id="politiki-aporritou" data-sec="" style="width: 100%; background: #f8f8fa;">
+      <div data-c="" style="max-width: 1600px; margin: 0 auto;">
+
+        <div data-head="" style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--step);">
+          <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
+          <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #835be3;"></span>
+          <h1 style="font-size: clamp(33px, 4vw, 45px); font-weight: 700; line-height: 1.25; margin: 0 20px; color: #271651; position: relative; top: -5px;" data-ht="">Πολιτική Απορρήτου</h1>
+          <span data-hb="" style="width: 80px; height: 5px; border-radius: 30px; background: #835be3;"></span>
+          <span data-hr="" style="width: 80px; height: 1px; border-radius: 30px; background: rgba(39, 22, 81, 0.25);"></span>
+        </div>
+
+        <div data-sheet="" style="max-width: 1000px; margin: 0 auto; background: #ffffff; border: 1px solid #2716510d; border-radius: 15px; padding: 20px 60px 40px;">
+
+          <article data-rule="" style="display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 24px; row-gap: 12px; padding: 40px 0 0;">
+            <span style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #835be3; font-variant-numeric: tabular-nums;">01</span>
+            <h2 style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #271651;">Lorem ipsum dolor sit amet</h2>
+            <p style="grid-column: 2; font-size: 16px; line-height: 28px; color: #333333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </article>
+
+          <article data-rule="" style="display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 24px; row-gap: 12px; padding: 40px 0 0; margin-top: 40px; border-top: 1px solid #2716511a;">
+            <span style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #835be3; font-variant-numeric: tabular-nums;">02</span>
+            <h2 style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #271651;">Consectetur adipiscing elit sed</h2>
+            <p style="grid-column: 2; font-size: 16px; line-height: 28px; color: #333333;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </article>
+
+          <article data-rule="" style="display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 24px; row-gap: 12px; padding: 40px 0 0; margin-top: 40px; border-top: 1px solid #2716511a;">
+            <span style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #835be3; font-variant-numeric: tabular-nums;">03</span>
+            <h2 style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #271651;">Nemo enim ipsam voluptatem quia</h2>
+            <p style="grid-column: 2; font-size: 16px; line-height: 28px; color: #333333;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.</p>
+          </article>
+
+          <article data-rule="" style="display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 24px; row-gap: 12px; padding: 40px 0 0; margin-top: 40px; border-top: 1px solid #2716511a;">
+            <span style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #835be3; font-variant-numeric: tabular-nums;">04</span>
+            <h2 style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #271651;">At vero eos et accusamus</h2>
+            <p style="grid-column: 2; font-size: 16px; line-height: 28px; color: #333333;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+          </article>
+
+          <article data-rule="" style="display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 24px; row-gap: 12px; padding: 40px 0 0; margin-top: 40px; border-top: 1px solid #2716511a;">
+            <span style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #835be3; font-variant-numeric: tabular-nums;">05</span>
+            <h2 style="font-size: 25px; font-weight: 700; line-height: 31.25px; color: #271651;">Vestibulum ante ipsum primis</h2>
+            <p style="grid-column: 2; font-size: 16px; line-height: 28px; color: #333333;">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; cras non dui non urna malesuada, in hendrerit ligula eget morbi tincidunt dolor sit amet.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" page="contact" hint-size="100%,620px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700&amp;display=swap&amp;subset=greek,latin" rel="stylesheet">
+<link rel="preload" href="SiteHeader.dc.html" as="fetch">
+<link rel="preload" href="SiteFooter.dc.html" as="fetch">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f8f8fa"></rect><text x="50" y="62" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="30" fill="#835be3">404</text></svg></template>
+<style>
+  ::view-transition-old(root) { animation: dcOut 200ms cubic-bezier(0.4, 0, 1, 1) both; }
+  ::view-transition-new(root) { animation: dcIn 320ms cubic-bezier(0, 0, 0.2, 1) both; }
+  @keyframes dcOut { to { opacity: 0; } }
+  @keyframes dcIn { from { opacity: 0; } }
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; font-family: 'Commissioner', system-ui, sans-serif; color: #271651; }
+  html { scroll-behavior: smooth; }
+  img, iframe { max-width: 100%; }
+  a { color: #835be3; text-decoration: none; }
+  a:hover { color: #a385ea; }
+  p { margin: 0; text-wrap: pretty; }
+  h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
+  ::selection { background: #ffb10a; color: #271651; }
+  :focus-visible { outline: 3px solid #835be3; outline-offset: 2px; }
+  :root { --step: 80px; --gutter: 80px; }
+  [data-c] { padding-left: var(--gutter); padding-right: var(--gutter); }
+  [data-sec] { padding-top: var(--step); padding-bottom: var(--step); }
+  [data-btn] { transition: background-color 200ms ease; }
+  [data-btn]:hover, [data-btn]:active { background: #a385ea !important; color: #ffffff !important; }
+  [data-qlink] { transition: color 200ms ease, border-color 200ms ease; }
+  [data-qlink]:hover { border-color: #835be3 !important; }
+  @media (max-width: 991px) { :root { --gutter: 40px; } }
+  @media (max-width: 767px) { :root { --gutter: 20px; } [data-sheet] { padding: 40px 24px 50px !important; border-radius: 10px !important; } [data-digits] { gap: 4px !important; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+</style>
+<script>
+  if (window.top === window.self) { document.head.insertAdjacentHTML('beforeend', '<style>@view-transition { navigation: auto; }<' + '/style>'); }
+</script>
+</helmet>
+
+<div style="width: 100%; background: #ffffff;">
+
+  <dc-import name="SiteHeader" page="contact" hint-size="100%,138px"></dc-import>
+
+  <main>
+    <section id="error-404" data-sec="" style="width: 100%; background: #f8f8fa;">
+      <div data-c="" style="max-width: 1600px; margin: 0 auto;">
+
+        <div data-sheet="" style="max-width: 1000px; margin: 0 auto; background: #ffffff; border: 1px solid #2716510d; border-radius: 15px; padding: 70px 60px 80px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+          <div data-digits="" aria-hidden="true" style="display: flex; align-items: baseline; justify-content: center; gap: 10px; line-height: 0.82; font-weight: 700; font-size: clamp(110px, 20vw, 220px); letter-spacing: -0.04em; font-variant-numeric: tabular-nums;">
+            <span style="color: #835be3;">4</span>
+            <span style="color: #ffb10a;">0</span>
+            <span style="color: #ef5074;">4</span>
+          </div>
+
+          <h1 style="font-size: clamp(33px, 4vw, 45px); font-weight: 700; line-height: 1.25; color: #271651; margin-top: 40px; text-wrap: balance;">Η σελίδα δεν βρέθηκε</h1>
+
+          <p style="max-width: 620px; font-size: 16px; line-height: 28px; color: #333333; margin-top: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+          <a href="arxiki.dc.html" data-btn="" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 40px; padding: 0 34px; height: 56px; border-radius: 30px; background: #835be3; color: #ffffff; font-size: 16px; font-weight: 600; line-height: 26px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><path d="M3.8 11.2 12 4.2l8.2 7"></path><path d="M6 10.4V19.6h12v-9.2"></path></svg>
+            <span>Επιστροφή στην Αρχική</span>
+          </a>
+
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 30px; margin-top: 50px; padding-top: 40px; border-top: 1px solid #2716511a; width: 100%;">
+            <a href="ypiresies.dc.html" data-qlink="" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Υπηρεσίες</a>
+            <a href="sxetika.dc.html" data-qlink="" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Σχετικά με εμένα</a>
+            <a href="erotiseis.dc.html" data-qlink="" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Συχνές Ερωτήσεις</a>
+            <a href="epikoinonia.dc.html" data-qlink="" style="font-size: 15px; line-height: 26px; color: #271651; border-bottom: 1px solid transparent;">Επικοινωνία</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" page="contact" hint-size="100%,620px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}"></script>
+</body>
+</html>
