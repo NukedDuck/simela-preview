@@ -141,7 +141,7 @@
   [data-hmob] [data-hc] { max-height: calc(100vh - var(--stick)); max-height: calc(100dvh - var(--stick)); }
   .menu-inner { overflow: hidden; background: #ffffff; border-top: 1px solid rgba(39, 22, 81, 0.05); box-shadow: 0 24px 40px rgba(39, 22, 81, 0.16); }
   .sub { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows 340ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 340ms; }
-  .sub[data-open="true"] { grid-template-rows: 1fr; visibility: visible; transition-delay: 0s; }
+  .sub[data-open="true"] { grid-template-rows: 1fr; visibility: inherit; transition-delay: 0s; }
   .sub-in { overflow: hidden; display: flex; flex-direction: column; }
 
   @media (prefers-reduced-motion: reduce) {

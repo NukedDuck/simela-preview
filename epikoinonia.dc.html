@@ -87,6 +87,7 @@
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
   [data-g2] > * { min-width: 0; }
   @container (max-width: 451.98px) { [data-fgrid] { grid-template-columns: minmax(0, 1fr) !important; } }
+  @supports not (container-type: inline-size) { [data-fgrid] { grid-template-columns: minmax(0, 1fr) !important; } }
   @media (min-width: 700px) and (max-width: 1099px) { [data-fgrid] { grid-template-columns: minmax(0, 1fr) !important; } }
   [data-sbtn]:disabled:hover, [data-sbtn]:disabled:active { background: #835be3 !important; }
   @media (max-width: 767px) { form[data-pad] { padding: 20px !important; } }
@@ -317,7 +318,7 @@ class Component extends DCLogic {
     else if (email.length > 254 || !emailRe.test(email)) errors.email = 'Συμπλήρωσε ένα έγκυρο email.';
     const msg = val('message');
     if (msg.length > 350) errors.message = 'Το μήνυμα δεν μπορεί να ξεπερνά τους 350 χαρακτήρες.';
-    else if (/(https?:\/\/|www\.)/i.test(msg) || /(^|[^@\w.-])[a-z0-9][a-z0-9-]*\.(com|net|org|gr|eu|io|co|me|ly|gl|gd|gy|to|cc|ws|tv|ai|app|dev|info|biz|xyz|link|click|site|online|shop|store|top|live|pro|club|tech|page|ru|cn|uk|de|it|fr|us)\b/i.test(msg)) errors.message = 'Το μήνυμα δεν μπορεί να περιέχει συνδέσμους (URL). Αν θέλεις να μου στείλεις κάποιον σύνδεσμο, γράψε μου στο SimelaPsychology@gmail.com.';
+    else if (/(https?:\/\/|www\.)/i.test(msg) || /(^|[^@\w.-])[a-z0-9][a-z0-9-]*\.(com|net|org|gr|eu|io|co|ly|gl|gd|gy|cc|ws|tv|ai|app|dev|info|biz|xyz|link|click|site|shop|store|top|live|club|tech|page|ru|cn|uk|fr|us)\b/i.test(msg) || /(^|[^@\w.-])[a-z0-9][a-z0-9-]*\.(me|to|de|it|pro|online)\/\S/i.test(msg)) errors.message = 'Το μήνυμα δεν μπορεί να περιέχει συνδέσμους (URL). Αν θέλεις να μου στείλεις κάποιον σύνδεσμο, γράψε μου στο SimelaPsychology@gmail.com.';
     if (!this.state.session) errors.session = 'Επίλεξε αν θέλεις συνεδρία ή έχεις κάποια ερώτηση.';
     const consent = form.elements['consent'];
     if (!consent || !consent.checked) errors.consent = 'Παρακαλώ να αποδεχθείς τους Όρους Χρήσης.';
