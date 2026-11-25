@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Footer — Σημέλα Πασιαλή</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="assets/logo-mark-2.png" type="image/png">
+<link rel="preload" href="assets/fonts/commissioner-greek.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="assets/fonts/commissioner-latin.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="assets/fonts/commissioner.css">
+<script src="assets/react-local.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  html, body { margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; font-family: 'Commissioner', system-ui, sans-serif; }
+  a { text-decoration: none; }
+  p, h1, h2, h3, h4 { margin: 0; text-wrap: pretty; }
+  [data-c] { padding-left: 80px; padding-right: 80px; }
+  [data-g4] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .f-link, .f-nav, .f-cta { transition: color 200ms ease; }
+  .f-link { display: inline-block; transition: color 200ms ease, transform 150ms ease; }
+  .f-link:hover, .f-link:focus-visible { color: var(--f-accent) !important; }
+  .f-nav:hover, .f-nav:focus-visible { color: var(--f-fg) !important; text-decoration: underline; }
+  .f-cta:hover, .f-cta:focus-visible { text-decoration: underline; }
+  .f-chip { transition: background-color 200ms ease, transform 150ms ease; }
+  .f-chip:hover, .f-chip:focus-visible { background: var(--f-chip-hover) !important; }
+  @media (hover: hover) and (pointer: fine) {
+    .f-link:hover { transform: translateY(-2px); }
+    .f-chip:hover { transform: translateY(-2px); }
+  }
+  .f-link:focus-visible, .f-chip:focus-visible { transform: translateY(-2px); }
+  @media (max-width: 991px) { [data-c] { padding-left: 40px; padding-right: 40px; } [data-g4] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 767px) { [data-c] { padding-left: 20px; padding-right: 20px; } [data-fnav] { width: 100%; flex-direction: column; align-items: flex-start !important; justify-content: flex-start !important; text-align: left !important; gap: 9px; } [data-fcol] { align-items: flex-start; text-align: left; } [data-fbot] { justify-content: flex-start !important; text-align: left !important; } }
+  @media (max-width: 479px) { [data-g4] { grid-template-columns: minmax(0, 1fr); } }
+
+  [data-totop], [data-ckfab] { display: none; box-shadow: none; transition: background-color 200ms ease, opacity 200ms ease, transform 200ms ease; }
+  [data-totop]:hover, [data-totop]:active, [data-ckfab]:hover, [data-ckfab]:active { background: #a385ea; }
+  [data-totop][data-on="true"] { display: flex; animation: fabIn 240ms ease both; }
+  @keyframes fabIn { from { opacity: 0; transform: translateY(10px); } }
+  @media (max-width: 767px) { [data-ckfab] { display: flex; } [data-totop], [data-ckfab] { width: 48px !important; height: 48px !important; border-radius: 24px !important; } [data-totop] > svg, [data-ckfab] > svg { flex: 0 0 auto; } [data-totop] > svg { width: 26px !important; height: 26px !important; } [data-ckfab] > svg { width: 28px !important; height: 28px !important; } }
+
+  [data-ckov] { display: none; }
+  [data-ckov][data-on="true"] { display: flex; animation: ckIn 200ms ease both; }
+  @keyframes ckIn { from { opacity: 0; } }
+  [data-ckcard] { animation: ckUp 320ms cubic-bezier(.2,.9,.3,1) both; }
+  @keyframes ckUp { from { opacity: 0; transform: translateY(20px) scale(.98); } }
+  [data-ckx] { transition: background-color 200ms ease, color 200ms ease; }
+  [data-ckx]:hover { background: #835be3; color: #ffffff; }
+  [data-sw] { background-color: rgba(39, 22, 81, 0.1); justify-content: flex-start; transition: background-color 220ms ease; }
+  [data-sw][data-on="true"] { background-color: #835be3; justify-content: flex-end; }
+  [data-sw] [data-knob] { transition: transform 220ms cubic-bezier(.2,.7,.2,1); }
+  [data-btn], [data-btn2] { transition: background-color 200ms ease, color 200ms ease; }
+  [data-btn]:hover { background: #a385ea; }
+  [data-btn2]:hover { background: #f8f8fa; }
+  @media (max-width: 767px) { [data-ckcard] { padding: 30px 24px !important; } [data-ckact] > button { flex: 1 1 100% !important; } }
+  [data-ckbanner] { display: none; }
+  [data-ckbanner][data-on="true"] { display: block; animation: ckBan 320ms cubic-bezier(.2,.9,.3,1) both; }
+  @keyframes ckBan { from { opacity: 0; transform: translateY(16px); } }
+  [data-ckbanner][data-on="true"] ~ [data-totop], [data-ckbanner][data-on="true"] ~ [data-ckfab] { display: none !important; }
+  @media (max-width: 991px) { [data-ckbrow] { flex-direction: column; align-items: stretch !important; } [data-ckbact] { width: auto !important; flex-direction: row !important; flex-wrap: wrap; } [data-ckbact] > button { flex: 1 1 200px; } }
+  @media (max-width: 767px) { [data-ckbanner] { left: 12px !important; right: 12px !important; bottom: 12px !important; padding: 24px 20px !important; max-height: calc(100vh - 24px); overflow-y: auto; } [data-ckbact] > button { flex: 1 1 100% !important; } }
+</style>
+</helmet>
+
+<footer style="width: 100%; background: {{ fBg }}; color: {{ fMuted }}; --f-accent: {{ fAccent }}; --f-fg: {{ fFg }}; --f-chip-hover: {{ fChipHover }}; font-family: 'Commissioner', system-ui, sans-serif;">
+  <div data-c="" style="max-width: 1600px; margin: 0 auto;">
+
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px 36px; padding-top: 67px; padding-bottom: 36px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+      <img src="assets/logo-mark-2.png" alt="" width="53" height="57.5" style="height: 57.5px; width: auto; object-fit: contain; display: block; flex: 0 0 auto; align-self: flex-start; margin-top: -15.8px; margin-bottom: -8.2px;">
+      <div style="display: flex; flex-direction: column; gap: 9px;">
+        <span style="font-size: 30px; font-weight: 600; line-height: 25.875px; color: {{ fFg }};">Ψυχολόγος Ψυχολόγος</span>
+        <span style="font-size: 11.5px; font-weight: 600; line-height: 15px; letter-spacing: 1.35px; color: {{ fFaint }};">ONLINE ΣΥΜΒΟΥΛΕΥΤΙΚΗ ΨΥΧΟΘΕΡΑΠΕΙΑ</span>
+      </div>
+      </div>
+      <nav data-fnav="" aria-label="Πλοήγηση υποσέλιδου" style="display: flex; flex-wrap: wrap; align-items: center; gap: 9px 36px;">
+        <a href="{{ hHome }}" style="font-size: 16px; font-weight: 400; line-height: 26px; color: {{ fMuted }};" class="f-link">Αρχική</a>
+        <a href="{{ hServices }}" style="font-size: 16px; font-weight: 400; line-height: 26px; color: {{ fMuted }};" class="f-link">Υπηρεσίες</a>
+        <a href="{{ hAbout }}" style="font-size: 16px; font-weight: 400; line-height: 26px; color: {{ fMuted }};" class="f-link">Σχετικά με εμένα</a>
+        <a href="{{ hFaq }}" style="font-size: 16px; font-weight: 400; line-height: 26px; color: {{ fMuted }};" class="f-link">Συχνές Ερωτήσεις</a>
+        <a href="epikoinonia.dc.html" style="font-size: 16px; font-weight: 400; line-height: 26px; color: {{ fMuted }};" class="f-link">Επικοινωνία</a>
+      </nav>
+    </div>
+
+    <div data-g4="" style="display: grid; gap: 36px; padding-top: 36px; padding-bottom: 36px; border-top: 1px solid {{ fBorder }};">
+
+      <div data-fcol="" style="display: flex; flex-direction: column; gap: 18px;">
+        <h2 style="font-size: 17px; font-weight: 700; line-height: 25px; color: {{ fAccent }};">Ας κρατήσουμε επαφή</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 17.6px; margin-top: 2.2px;">
+          <a href="https://www.instagram.com/simela_psychology/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="f-chip" style="width: 42px; height: 42px; border-radius: 50%; background: {{ fChipBg }}; display: flex; align-items: center; justify-content: center; color: {{ fChipFg }};">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+          <a href="https://www.tiktok.com/@shmelapas" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="f-chip" style="width: 42px; height: 42px; border-radius: 50%; background: {{ fChipBg }}; display: flex; align-items: center; justify-content: center; color: {{ fChipFg }};">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-2.9v12.1a2.4 2.4 0 1 1-2-2.37V9.8a5.4 5.4 0 1 0 5 5.39V9.2a6.3 6.3 0 0 0 3.6 1.14V7.44A3.5 3.5 0 0 1 16.6 3z"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/%CF%83%CE%B7%CE%BC%CE%AD%CE%BB%CE%B1-%CF%80%CE%B1%CF%83%CE%B9%CE%B1%CE%BB%CE%AE-35525a334/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="f-chip" style="width: 42px; height: 42px; border-radius: 50%; background: {{ fChipBg }}; display: flex; align-items: center; justify-content: center; color: {{ fChipFg }};">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5.6" cy="5.55" r="2.05"></circle><rect x="3.75" y="9.2" width="3.7" height="11.3"></rect><path d="M10.1 9.2H13.6V10.8C14.2 9.75 15.35 8.9 17 8.9C19.6 8.9 20.5 10.6 20.5 13.6V20.5H16.8V14.4C16.8 13.1 16.45 12.15 15.25 12.15C14.05 12.15 13.6 13 13.6 14.3V20.5H10.1Z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div data-fcol="" style="display: flex; flex-direction: column; gap: 18px;">
+        <h2 style="font-size: 17px; font-weight: 700; line-height: 25px; color: {{ fAccent }};">Επικοινωνία</h2>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <a href="tel:+306947760122" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;"><span style="display: flex; align-items: center; gap: 10px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; color: {{ fAccent }};"><path d="M6.6 3.5h3l1.5 3.8-2 1.4a12 12 0 0 0 5.2 5.2l1.4-2 3.8 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"></path></svg><span>+30 694 776 0122</span></span></a>
+          <a href="mailto:SimelaPsychology@gmail.com" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;"><span style="display: flex; align-items: center; gap: 10px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; color: {{ fAccent }};"><rect x="3" y="5.5" width="18" height="13" rx="2.5"></rect><path d="M3.8 7 12 12.6 20.2 7"></path></svg><span>SimelaPsychology@<wbr>gmail.com</span></span></a>
+          <p style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 26px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 5px; color: {{ fAccent }};"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5.2l3.2 2"></path></svg><span>Ωράριο Επικοινωνίας:<br>Δευ–Παρ, 10:00–20:00<br>Σάβ–Κυρ, 11:00–23:00</span></p>
+        </div>
+      </div>
+
+      <div data-fcol="" style="display: flex; flex-direction: column; gap: 18px;">
+        <h2 style="font-size: 17px; font-weight: 700; line-height: 25px; color: {{ fAccent }};">Υπηρεσίες</h2>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <a href="atomiki-symvouleftiki-enilikon.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Ενήλικες</a>
+          <a href="kriseis-panikou.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Κρίσεις πανικού</a>
+          <a href="kriseis-agchous.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Κρίσεις άγχους</a>
+          <a href="psychopathologia-paidiou-efivou.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Παιδιά &amp; Έφηβοι</a>
+          <a href="{{ hServices }}" style="font-size: 15px; font-weight: 600; line-height: 26px; color: {{ fAccent }};" class="f-cta">Δες όλες τις υπηρεσίες →</a>
+        </div>
+      </div>
+
+      <div data-fcol="" style="display: flex; flex-direction: column; gap: 18px;">
+        <h2 style="font-size: 17px; font-weight: 700; line-height: 25px; color: {{ fAccent }};">Νομικά</h2>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <a href="politiki-aporritou.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Πολιτική Απορρήτου</a>
+          <a href="oroi-xrisis.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Όροι Χρήσης</a>
+          <a href="politiki-cookies.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Πολιτική Cookies</a>
+          <a href="aporrito-synedrion.dc.html" style="font-size: 15px; line-height: 26px; color: {{ fMuted }};" style-hover="color: #ffffff; text-decoration: underline;">Ιδιωτικό Απόρρητο</a>
+          <button type="button" onClick="{{ ckOpen }}" style="align-self: flex-start; padding: 0; border: none; background: none; font-family: inherit; font-size: 15px; line-height: 26px; color: {{ fMuted }}; cursor: pointer; text-align: left;" style-hover="color: #ffffff; text-decoration: underline;">Ρυθμίσεις cookies</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-fbot="" style="display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 18px; padding-bottom: 18px; border-top: 1px solid {{ fBorder }};">
+      <p style="font-size: 14.5px; line-height: 26px;">© 2026 <a href="https://simela-psychology.gr/" style="color: inherit;" style-hover="color: #ffffff; text-decoration: underline;">simela-psychology.gr</a> · Με επιφύλαξη παντός δικαιώματος<span style="display: inline-block; padding: 0 6px;">·</span>Κατασκευή Ιστοσελίδων με 💗 — «Coming Soon»</p>
+    </div>
+
+  </div>
+
+  <section data-ckbanner="" data-on="{{ bannerOn }}" aria-label="Οι επιλογές σου για τα cookies" style="position: fixed; left: 24px; right: 24px; bottom: 24px; z-index: 65; max-width: 1100px; margin: 0 auto; background: #ffffff; border: 1px solid #2716510d; border-radius: 15px; box-shadow: 0 12px 40px rgba(39, 22, 81, 0.18); padding: 30px 40px; color: #271651; text-align: left;">
+    <div data-ckbrow="" style="display: flex; align-items: center; gap: 24px 40px;">
+      <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0; flex: 1 1 auto;">
+        <h2 style="margin: 0; font-size: 21px; font-weight: 700; line-height: 30px; color: #271651;">Οι επιλογές σου για τα cookies</h2>
+        <p style="font-size: 15px; line-height: 25px; color: #333333;">Χρησιμοποιούμε αναγκαία αποθήκευση για να θυμόμαστε τις επιλογές σου. Με τη συγκατάθεσή σου ενεργοποιούμε το Google Analytics για στατιστικά επισκεψιμότητας και το Elfsight για την εμφάνιση αξιολογήσεων Google. Μπορείς να αλλάξεις τις επιλογές σου οποτεδήποτε από τις Ρυθμίσεις cookies.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 24px;">
+          <a href="politiki-cookies.dc.html" style="font-size: 15px; font-weight: 600; line-height: 25px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Πολιτική Cookies</a>
+          <a href="politiki-aporritou.dc.html" style="font-size: 15px; font-weight: 600; line-height: 25px; color: #835be3; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #a385ea;">Πολιτική Απορρήτου</a>
+        </div>
+      </div>
+      <div data-ckbact="" style="display: flex; flex-direction: column; gap: 12px; flex: 0 0 auto; width: 260px;">
+        <button type="button" onClick="{{ ckAcceptAll }}" data-btn="" style="height: 52px; padding: 0 20px; border-radius: 30px; border: none; background: #835be3; color: #ffffff; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Αποδοχή όλων</button>
+        <button type="button" onClick="{{ ckRejectStats }}" data-btn="" style="height: 52px; padding: 0 20px; border-radius: 30px; border: none; background: #835be3; color: #ffffff; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Απόρριψη στατιστικών</button>
+        <button type="button" onClick="{{ ckOpen }}" data-btn2="" style="height: 52px; padding: 0 20px; border-radius: 30px; border: 1px solid #835be3; background: #ffffff; color: #835be3; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Ρυθμίσεις cookies</button>
+      </div>
+    </div>
+  </section>
+
+  <button type="button" data-totop="" data-on="{{ toTopOn }}" onClick="{{ scrollTop }}" aria-label="Επιστροφή στην κορυφή" style="position: fixed; right: 24px; bottom: 24px; z-index: 60; width: 47px; height: 47px; border-radius: 24px; border: none; background: #835be3; color: #ffffff; align-items: center; justify-content: center; cursor: pointer;">
+    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5.6"></path><path d="M5.6 12 12 5.6l6.4 6.4"></path></svg>
+  </button>
+
+  <button type="button" data-ckfab="" onClick="{{ ckOpen }}" aria-label="Ρυθμίσεις cookies" style="position: fixed; left: 24px; bottom: 24px; z-index: 60; width: 52px; height: 52px; border-radius: 26px; border: none; background: #835be3; color: #ffffff; align-items: center; justify-content: center; cursor: pointer;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 3.4 3.4 0 0 1-4.6-4.3A3.2 3.2 0 0 1 12 3z"></path><circle cx="9" cy="10" r="1.1" fill="currentColor" stroke="none"></circle><circle cx="13.4" cy="14.6" r="1.1" fill="currentColor" stroke="none"></circle><circle cx="8.6" cy="15.2" r="1" fill="currentColor" stroke="none"></circle></svg>
+  </button>
+
+  <div data-ckov="" data-on="{{ ckOn }}" onClick="{{ ckClose }}" style="position: fixed; inset: 0; z-index: 70; align-items: center; justify-content: center; padding: 24px; background: rgba(39, 22, 81, 0.55);">
+    <div data-ckcard="" role="dialog" aria-modal="true" aria-labelledby="ck-title" ref="{{ dlgRef }}" onClick="{{ ckStop }}" style="width: 100%; max-width: 620px; max-height: 88vh; overflow-y: auto; background: #ffffff; border-radius: 15px; padding: 40px; display: flex; flex-direction: column; gap: 25px; color: #271651; text-align: left;">
+
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 12px; min-width: 0;">
+          <span style="width: 80px; height: 5px; border-radius: 30px; background: #835be3;"></span>
+          <h2 id="ck-title" style="margin: 0; font-size: 25px; font-weight: 700; line-height: 34px;">Ρυθμίσεις cookies</h2>
+        </div>
+        <button type="button" onClick="{{ ckClose }}" aria-label="Κλείσιμο" data-ckx="" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 22px; border: 1px solid #2716510d; background: #f8f8fa; color: #271651; cursor: pointer;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+        </button>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 15px;">
+
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 22px 25px; border: 1px solid #2716510d; border-radius: 15px; background: #f8f8fa;">
+          <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+            <span style="font-size: 17px; font-weight: 600; line-height: 26px;">Αναγκαία</span>
+            <span style="font-size: 15px; line-height: 26px; color: #333333;">Αποθηκεύουν τις επιλογές σου για τα cookies.</span>
+          </div>
+          <span style="flex: 0 0 auto; padding: 0 16px; height: 32px; display: flex; align-items: center; border-radius: 16px; background: #835be3; color: #ffffff; font-size: 14px; font-weight: 600;">Πάντα ενεργά</span>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 22px 25px; border: 1px solid #2716510d; border-radius: 15px; background: #ffffff;">
+          <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+            <span id="ck-stats" style="font-size: 17px; font-weight: 600; line-height: 26px;">Στατιστικά</span>
+            <span id="ck-stats-d" style="font-size: 15px; line-height: 26px; color: #333333;">Αρχικά ανενεργά. Επιτρέπουν περιορισμένη μέτρηση μέσω Google Analytics, χωρίς στοιχεία φόρμας, μηνύματα ή δεδομένα συνεδριών.</span>
+          </div>
+          <button type="button" role="switch" data-sw="" data-on="{{ ckStats }}" aria-checked="{{ ckStats }}" aria-labelledby="ck-stats" aria-describedby="ck-stats-d" onClick="{{ ckToggleStats }}" style="flex: 0 0 auto; width: 56px; height: 32px; border-radius: 16px; border: none; padding: 4px; cursor: pointer; display: flex; align-items: center;">
+            <span data-knob="" style="width: 24px; height: 24px; border-radius: 12px; background: #ffffff; display: block;"></span>
+          </button>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 22px 25px; border: 1px solid #2716510d; border-radius: 15px; background: #ffffff;">
+          <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+            <span id="ck-ext" style="font-size: 17px; font-weight: 600; line-height: 26px;">Εξωτερικό περιεχόμενο</span>
+            <span id="ck-ext-d" style="font-size: 15px; line-height: 26px; color: #333333;">Αρχικά ανενεργό. Εμφανίζει αξιολογήσεις Google μέσω του widget της Elfsight.</span>
+          </div>
+          <button type="button" role="switch" data-sw="" data-on="{{ ckExt }}" aria-checked="{{ ckExt }}" aria-labelledby="ck-ext" aria-describedby="ck-ext-d" onClick="{{ ckToggleExt }}" style="flex: 0 0 auto; width: 56px; height: 32px; border-radius: 16px; border: none; padding: 4px; cursor: pointer; display: flex; align-items: center;">
+            <span data-knob="" style="width: 24px; height: 24px; border-radius: 12px; background: #ffffff; display: block;"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <div data-ckact="" style="display: flex; flex-direction: column; gap: 12px;">
+        <button type="button" onClick="{{ ckSave }}" data-btn2="" style="height: 52px; padding: 0 20px; border-radius: 30px; border: 1px solid #835be3; background: #ffffff; color: #835be3; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Αποθήκευση επιλογών</button>
+        <button type="button" onClick="{{ ckRejectStats }}" data-btn="" style="height: 52px; padding: 0 20px; border-radius: 30px; border: none; background: #835be3; color: #ffffff; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Απόρριψη στατιστικών</button>
+        <button type="button" onClick="{{ ckAcceptAll }}" data-btn="" style="height: 52px; padding: 0 20px; border-radius: 30px; border: none; background: #835be3; color: #ffffff; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Αποδοχή όλων</button>
+      </div>
+
+      <a href="politiki-cookies.dc.html" style="font-size: 15px; line-height: 26px; color: #835be3;" style-hover="color: #a385ea; text-decoration: underline;">Διάβασε την Πολιτική Cookies</a>
+
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:620},&quot;page&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;contact&quot;,&quot;emergency&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home' | 'contact' | 'emergency'&quot;},&quot;footerColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Dark Plum #271651&quot;,&quot;Volt Dark #3C007D&quot;,&quot;French Violet #6F2DBD&quot;,&quot;Indigo Purple #4E1691&quot;,&quot;Regal Purple #63209F&quot;,&quot;Dark Grape #481B5B&quot;],&quot;default&quot;:&quot;Dark Plum #271651&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Χρώματα&quot;}}">
+class Component extends DCLogic {
+  state = { toTop: false, ckOn: false, stats: false, ext: false, banner: false };
+  dlg = React.createRef();
+
+  // Αποθηκεύεται μόνο η επιλογή (αναγκαία τοπική αποθήκευση) για 6 μήνες, όπως λέει η Πολιτική Cookies.
+  // Google Analytics: δεν υπάρχει Measurement ID, οπότε δεν φορτώνεται τίποτα. Όταν μπει, φορτώνεται μόνο με stats === true και θέλει αλλαγή στο CSP.
+  // Elfsight (ext): το φορτώνει η Αρχική μόνο με ext === true. Οι αλλαγές ανακοινώνονται με το event 'simela:consent'. Η Αρχική ζητά συγκατάθεση με το 'simela:consent-request'.
+  // v: 2 = μετά την προσθήκη του Elfsight. Παλιότερες επιλογές (v: 1) δεν ισχύουν και ζητούνται ξανά.
+  readConsent() {
+    try {
+      const p = JSON.parse(localStorage.getItem('simela_cookie_consent') || 'null');
+      if (!p || p.v !== 2 || typeof p.ts !== 'number') return null;
+      const exp = new Date(p.ts);
+      exp.setMonth(exp.getMonth() + 6);
+      if (Date.now() >= exp.getTime()) { localStorage.removeItem('simela_cookie_consent'); return null; }
+      return { stats: p.stats === true, ext: p.ext === true };
+    } catch (e) { return null; }
+  }
+
+  writeConsent(stats, ext) {
+    try { localStorage.setItem('simela_cookie_consent', JSON.stringify({ v: 2, stats: stats, ext: ext, ts: Date.now() })); } catch (e) {}
+    if (!stats) this.clearStats();
+    this.setState({ stats: stats, ext: ext, ckOn: false, banner: false }, () => this.restoreFocus());
+    window.dispatchEvent(new CustomEvent('simela:consent', { detail: { stats: stats, ext: ext } }));
+  }
+
+  clearStats() {
+    const names = document.cookie.split(';').map((c) => c.split('=')[0].trim()).filter((n) => n === '_ga' || n.indexOf('_ga_') === 0);
+    if (!names.length) return;
+    const parts = location.hostname.split('.');
+    const domains = [''];
+    for (let i = 0; i < parts.length - 1; i++) domains.push(parts.slice(i).join('.'));
+    names.forEach((n) => domains.forEach((d) => { document.cookie = n + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : ''); }));
+  }
+
+  openSettings() {
+    this._opener = document.activeElement;
+    const c = this.readConsent();
+    this.setState({ ckOn: true, stats: c ? c.stats : false, ext: c ? c.ext : false }, () => {
+      const x = this.dlg.current && this.dlg.current.querySelector('[data-ckx]');
+      if (x) x.focus();
+    });
+  }
+
+  closeSettings() { this.setState({ ckOn: false }, () => this.restoreFocus()); }
+
+  restoreFocus() {
+    const o = this._opener;
+    this._opener = null;
+    if (o && typeof o.focus === 'function' && document.contains(o)) o.focus();
+  }
+
+  componentDidMount() {
+    const c = this.readConsent();
+    // Banner πρώτης επίσκεψης: ΑΝΕΝΕΡΓΟ μέχρι το τέλος (απόφαση 01/11/2026). Ενεργοποίηση: BANNER_ON = true.
+    const BANNER_ON = false;
+    if (c) this.setState({ stats: c.stats, ext: c.ext }); else if (BANNER_ON) this.setState({ banner: true });
+    this._onReq = (e) => {
+      const cur = this.readConsent();
+      const d = (e && e.detail) || {};
+      this.writeConsent(d.stats != null ? !!d.stats : (cur ? cur.stats : false), d.ext != null ? !!d.ext : (cur ? cur.ext : false));
+    };
+    window.addEventListener('simela:consent-request', this._onReq);
+    this._onScroll = () => {
+      const on = window.scrollY > 600;
+      if (on !== this.state.toTop) this.setState({ toTop: on });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+    this._onKey = (e) => {
+      if (!this.state.ckOn) return;
+      if (e.key === 'Escape') { e.preventDefault(); this.closeSettings(); return; }
+      if (e.key !== 'Tab') return;
+      const d = this.dlg.current;
+      if (!d) return;
+      const f = Array.from(d.querySelectorAll('button, a[href], input, [tabindex]:not([tabindex="-1"])')).filter((el) => !el.disabled && el.getClientRects().length > 0);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1], a = document.activeElement;
+      if (!d.contains(a)) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && a === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && a === last) { e.preventDefault(); first.focus(); }
+    };
+    window.addEventListener('keydown', this._onKey);
+    this.dropGuard();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('keydown', this._onKey);
+    window.removeEventListener('simela:consent-request', this._onReq);
+  }
+
+  dropGuard() {
+    if (window.__siteDropGuard) return;
+    window.__siteDropGuard = true;
+    const idle = (fn) => (window.requestIdleCallback ? window.requestIdleCallback(fn, { timeout: 500 }) : setTimeout(fn, 1));
+    const add = (t, fn, o) => idle(() => window.addEventListener(t, fn, o));
+    const block = (ev) => {
+      const dt = ev.dataTransfer;
+      const hasFiles = dt && (Array.from(dt.types || []).includes('Files') || (dt.files && dt.files.length));
+      if (hasFiles) { ev.preventDefault(); ev.stopPropagation(); }
+    };
+    add('dragenter', block, true);
+    add('dragover', block, true);
+    add('drop', block, true);
+    add('dragstart', (ev) => {
+      const t = ev.target;
+      if (t && t.tagName && (t.tagName === 'IMG' || t.tagName === 'SVG' || t.closest('svg'))) ev.preventDefault();
+    }, true);
+    add('paste', (ev) => {
+      const items = ev.clipboardData && ev.clipboardData.items;
+      if (!items) return;
+      for (const it of items) if (it.kind === 'file') { ev.preventDefault(); return; }
+    }, true);
+  }
+
+  renderVals() {
+    const hex = (String(this.props.footerColor || '').match(/#[0-9a-f]{6}/i) || ['#271651'])[0];
+    const n = parseInt(hex.slice(1), 16);
+    const lum = (0.2126 * (n >> 16) + 0.7152 * ((n >> 8) & 255) + 0.0722 * (n & 255)) / 255;
+    const light = lum > 0.55;
+    const rgb = light ? '39, 22, 81' : '255, 255, 255';
+    return {
+      hHome: 'arxiki.dc.html', hServices: 'ypiresies.dc.html', hAbout: 'sxetika.dc.html', hFaq: 'erotiseis.dc.html',
+      fBg: hex,
+      fFg: light ? '#271651' : '#ffffff',
+      fMuted: 'rgba(' + rgb + ', 0.85)',
+      fFaint: 'rgba(' + rgb + ', 0.65)',
+      fBorder: 'rgba(' + rgb + ', 0.15)',
+      fAccent: light ? '#271651' : '#ffb10a',
+      fAccentHover: light ? '#3c007d' : '#ffc043',
+      fChipBg: light ? '#271651' : '#ffb10a',
+      fChipFg: light ? '#ffffff' : '#271651',
+      fChipHover: light ? '#3c007d' : '#ffc043',
+      toTopOn: this.state.toTop ? 'true' : 'false',
+      scrollTop: () => window.scrollTo({ top: 0, behavior: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }),
+      bannerOn: this.state.banner ? 'true' : 'false',
+      ckOn: this.state.ckOn ? 'true' : 'false',
+      ckStats: this.state.stats ? 'true' : 'false',
+      ckExt: this.state.ext ? 'true' : 'false',
+      dlgRef: this.dlg,
+      ckOpen: () => this.openSettings(),
+      ckClose: () => this.closeSettings(),
+      ckStop: (e) => e.stopPropagation(),
+      ckToggleStats: () => this.setState((s) => ({ stats: !s.stats })),
+      ckToggleExt: () => this.setState((s) => ({ ext: !s.ext })),
+      ckAcceptAll: () => this.writeConsent(true, true),
+      ckRejectStats: () => this.writeConsent(false, false),
+      ckSave: () => this.writeConsent(this.state.stats, this.state.ext)
+    };
+  }
+}
+</script>
+</body>
+</html>
